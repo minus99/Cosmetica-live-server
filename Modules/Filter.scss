@@ -1,0 +1,541 @@
+.kutuOzellikFiltre{
+    .kutuHeaderDefault,
+    .kutuFooterDefault,
+    .urunKiyaslamaOzellik_temizle,
+    .ayiracDefault,
+    .urunKiyaslamaOzellik_btnArama { display: none; }
+}
+
+.kutuOzellikFiltre .kutuBodyOzellikFiltre > table {
+    > tbody > tr > {
+        td .urunKiyaslamaOzellik_ozellik {
+            a img{display: none;}
+        }
+    }
+}
+
+
+.kutuOzellikFiltre{
+    .kutuBodyOzellikFiltre{
+        > table{
+            > tbody{
+                > tr{
+                    > td{
+                        &:empty{display:none;}
+                        .urunKiyaslamaOzellik_ozellik{
+                            .urunKiyaslamaOzellik_ozellikAd{
+                                font-family: $avenir-bold;
+                                font-size: 14px;
+                                letter-spacing: 1px;
+                                padding: 17px 20px 17px 0;
+                                position: relative;
+                                cursor: pointer;
+                                @media screen and (min-width: $breakpointXSM){
+                                    text-transform: uppercase;
+                                }
+                                &:after{
+                                    font-family: 'icomoon';
+                                    content: "\e900";
+                                    line-height: 14px;
+                                    font-size: 12px;
+                                    width: 12px;
+                                    height: 12px;
+                                    position: absolute;
+                                    top: 50%;
+                                    right: 0;
+                                    margin-top: -7px;
+                                    @include setTransform(rotate(180deg));
+                                }
+                                .mobile-element-filter-span-select{
+                                    &:empty{display: none; }
+                                }
+                            }
+                            &.kapali{
+                                .urunKiyaslamaOzellik_ozellikAd{
+                                    &:after{
+                                        @include setTransform(rotate(0deg));
+                                    }
+                                }
+                            }
+                            .urunKiyaslamaOzellik_ozellikIcerik{
+                                .search-input-wrapper{
+                                    position: relative;
+                                    .search-input{
+                                        margin-bottom: 15px;
+                                        padding-right: 40px;
+                                        height: 42px;
+                                        line-height: 30px;
+                                    }
+                                    .icon-ico_search{
+                                        position: absolute;
+                                        top: 5px;
+                                        right: 5px;
+                                        width: 30px;
+                                        height: 30px;
+                                        text-align: center;
+                                        line-height: 30px;
+                                        &:before{
+                                            font-size: 20px;
+                                        }
+                                    }
+                                }
+                                table{
+                                    > tbody{
+                                        >{
+                                            tr{
+                                                display: table;
+                                                > td{
+                                                    width: 50%;
+                                                    display: table-cell;
+                                                    vertical-align: top;
+                                                    text-align: left;
+                                                    a{
+                                                        display: block;
+                                                        padding: 12px 10px 8px 25px;
+                                                        font-family: $regular;
+                                                        font-size: 14px;
+                                                        position: relative;
+                                                        color: $lDark;
+                                                        &:before{
+                                                            font-family: 'icomoon';
+                                                            content:'';
+                                                            width: 11px;
+                                                            height: 11px;
+                                                            display: block;
+                                                            position: absolute;
+                                                            left: 0;
+                                                            top: 50%;
+                                                            font-size: 8px;
+                                                            text-align: center;
+                                                            line-height: 11px; 
+                                                            margin-top: -6px;
+                                                            @include transition(all .2s ease);
+                                                            border: 2px solid #9f9f9f;
+                                                        }
+                                                        &.link_selected{
+                                                            &:before{
+                                                                border-color: $lDark;
+                                                                content:'\e92e';
+                                                            } 
+                                                            .filter-count{display: none;}
+                                                        }
+                                                        @media screen and (min-width: $breakpointXSM){
+                                                            &:hover{
+                                                                padding-left: 30px;
+                                                                &:before{
+                                                                    border-color: $lDark;
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                    .urunKiyaslamaOzellik_ozellik {
+                                                        .filter-count{
+                                                            display: none;
+                                                            }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            &.color{
+                                .urunKiyaslamaOzellik_ozellikIcerik{
+                                    table > tbody > tr > td{
+                                        .urunKiyaslamaOzellik_ozellik{
+                                            a{
+                                                padding-left: 60px;
+                                                padding-top: 14px;
+                                                padding-bottom: 14px;
+                                                &:after{
+                                                    content: '';
+                                                    position: absolute;
+                                                    top: 50%;
+                                                    left: 25px;
+                                                    width: 24px;
+                                                    height: 24px;
+                                                    border: 1px solid transparent;
+                                                    margin-top: -12px;
+                                                }
+                                                &:hover{
+                                                    padding-left: 65px;
+                                                }
+                                            }
+                                            &.pembe{
+                                                a{
+                                                    &:after{
+                                                        background: #fa3aae;
+                                                    }
+                                                }   
+                                            }
+                                            &.mavi{
+                                                a{
+                                                    &:after{
+                                                        background: #5382ff;
+                                                    }
+                                                }
+                                            }
+                                            &.beyaz{
+                                                a{
+                                                    &:after{
+                                                        background: #ffffff;
+                                                        border-color: #e1e1e1;
+                                                    }
+                                                }
+                                            }
+                                            &.siyah{
+                                                a{
+                                                    &:after{
+                                                        background: #000000;
+                                                    }
+                                                }
+                                            }
+                                            &.kirmizi{
+                                                a{
+                                                    &:after{
+                                                        background: #ff5252;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            &.mrk.live-search{
+                                .urunKiyaslamaOzellik_ozellikIcerik{ 
+                                    table{
+                                        > tbody{
+                                            >{
+                                                tr{display: none;}
+                                                tr.show{display: table;}
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            &.mrk.live-search.no-result{
+                                .urunKiyaslamaOzellik_ozellikIcerik{ 
+                                    .search-input-wrapper{
+                                        &:after{
+                                            content:'Aradığınız kriter de marka bulunamadı...';
+                                            font-family: $regular;
+                                            font-size: 13px;
+                                            color: $red;
+                                            padding: 5px 15px;
+                                            display: block;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 850px){
+    .kutuOzellikFiltre{
+        .urunKiyaslamaOzellik_ozellik{
+            .urunKiyaslamaOzellik_ozellikIcerik{
+                > table{
+                    overflow-x: hidden;
+                    max-height: 175px;
+                    display: block;
+                    tbody{display:block;}
+                }
+            }
+        }
+        ::-webkit-scrollbar {
+            width: 3px;
+        }
+        ::-webkit-scrollbar-track {
+            background: $Gray;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: $lDark;
+        }
+        ::-webkit-scrollbar-thumb:window-inactive {
+            background: $lDark;
+        }
+    }
+}
+
+@media screen and (max-width: $breakpointXSM){
+
+    .kutuBodyOzellikFiltre table tr .urunKiyaslamaOzellik_ozellikIcerik,
+    .mobiOpened .kutuBodyOzellikFiltre > table > tbody > tr,
+    .kutuKategori .kutuBodyKategori,
+    .mobiOpened .kutuKategori{display: none;}
+    .mobiOpened .kutuKategori.mobiOpened,
+    .mobiOpened .kutuKategori.mobiOpened .kutuBodyKategori,
+    .mobiOpened .kutuBodyOzellikFiltre > table > tbody > tr.mobiOpened,
+    .mobiOpened .kutuBodyOzellikFiltre > table > tbody > tr.mobiOpened .urunKiyaslamaOzellik_ozellikIcerik{display: block;}
+
+    .kutuOzellikFiltre{
+        .kutuBodyOzellikFiltre{
+            > table > tbody > tr > td {
+                .urunKiyaslamaOzellik_ozellik{
+                    .urunKiyaslamaOzellik_ozellikAd{
+                        font-family: $regular;
+                        font-size: 14px;
+                        letter-spacing: 0;
+                        padding-top: 22px;
+                        padding-bottom: 22px;
+                        padding-right: 50px;
+                        padding-left: 15px;
+                        border-bottom: 1px solid $Gray;
+                        margin-left: 10px;
+                        margin-right: 10px;
+                        &:after{
+                            content: '\e903';
+                            transform: none;
+                            width: 30px;
+                            font-size: 15px;
+                            height: 30px;
+                            text-align: center;
+                            line-height: 30px;
+                            right: 5px;
+                            margin-top: -15px;
+                        }
+                        .mobile-element-filter-span-select{
+                            float: right;
+                            color: #6c6c6c;
+                            width: 50%;
+                            min-height: 15px;
+                            overflow: hidden;
+                            white-space: nowrap;
+                            text-overflow: ellipsis;
+                        }
+                    }
+                    .urunKiyaslamaOzellik_ozellikIcerik{
+                        padding: 15px;
+                    }
+                    .urunKiyaslamaOzellik_ozellikIcerik{
+                        table > tbody > tr > td a{
+                            padding-top: 15px;
+                            padding-bottom: 12px;
+                            margin-left: 15px;
+                            margin-right: 15px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    body.mobiOpened {
+        .ems-page-list .ems-container-full-last-left-inner{
+            top:0;
+            height: calc(100% - 50px);
+        }
+        
+        .kutuOzellikFiltre .kutuBodyOzellikFiltre > table > tbody > tr > td{
+            .urunKiyaslamaOzellik_ozellik {
+                .urunKiyaslamaOzellik_ozellikAd{
+                    margin-left: 0;
+                    margin-right: 0;
+                    padding-left: 50px;
+                    padding-right: 15px;
+                    border-bottom: none;
+                    text-align: right;
+                    background: #fbfbfb;
+                    &:after{
+                        right: inherit;
+                        left: 15px;
+                        @include setTransform(rotate(180deg));
+                    }
+                    .mobile-element-filter-span-select{display: none;}
+                }
+            }
+        }
+    }
+
+    .ems-mobile{
+        &-sort-popup{
+            position: fixed;
+            width: calc(100% - 65px);
+            height: 100%;
+            background: #fff;
+            top: 0;
+            left: 0;
+            z-index: 20;
+            @include setTransform(translateX(-100%));
+            @include transition(transform 333ms ease-in-out);
+            will-change: transform;
+            .ems-mobile-filter-sort{
+                position: relative;
+                background: #fbfbfb;
+                padding-top: 23px;
+                padding-bottom: 22px;
+                text-align: center;
+                .ems-mobile-filter-text{
+                    span{
+                        display: block;
+                        color: #000;
+                        font-family: $avenir-bold;
+                        letter-spacing: 1.6px;
+                        font-size: 14px;
+                        text-transform: uppercase;
+                    }
+                }
+                .ems-mobile-filter-btn{
+                    position: absolute;
+                    top: 50%;
+                    right: -50px;
+                    width: 30px;
+                    height: 30px;
+                    background: #fff;
+                    text-align: center;
+                    margin-top: -12px;
+                    display: none;
+                    opacity: 0;
+                    a{
+                        display: block;
+                        text-align: center;
+                        i{line-height: 30px;}
+                        i, i:before{
+                            font-size: 12px;
+                            color: #000;
+                        }
+                    }
+                }
+            }
+            &-body{
+                position: absolute;
+                top: 50px;
+                left: 0;
+                width: 100%;
+                height: calc(100% - 100px);
+                overflow-x: hidden;
+                padding-top: 15px;
+                padding-bottom: 15px;
+                ul{
+                    li{
+                        a{
+                            display: block;
+                            position: relative;
+                            font-family: $regular;
+                            font-size: 14px;
+                            padding:20px 50px 19px 15px;
+                            border-bottom: 1px solid #e1e1e1;
+                            margin-left: 10px;
+                            margin-right: 10px;
+                            color: #6c6c6c;
+                            &:after{
+                                font-family: 'icomoon';
+                                content: '';
+                                width: 11px;
+                                height: 11px;
+                                display: block;
+                                font-size: 8px;
+                                text-align: center;
+                                line-height: 11px;
+                                margin-top: -5px;
+                                position: absolute;
+                                top: 50%;
+                                right: 10px;
+                                border: 2px solid #9f9f9f;
+                            }
+                        }
+                        &.selected{
+                            a{
+                                color: #000;
+                                &:after{
+                                    border-color: #000000;
+                                    content: '\e92e';
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &-filter-buttons{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 50px;
+            display: table;
+            table-layout: fixed;
+            .btnDefault {
+                display: table-cell;
+                vertical-align: middle;
+                min-width: 50%;
+                background: #fbfbfb;
+                font-family: $avenir-bold;
+                letter-spacing: 1.6px;
+                text-align: center;
+                text-transform: uppercase;
+                padding-top: 18px;
+                padding-bottom: 18px;
+                span{ color: #000; }
+                &.btnDefaultMobFilterAction, &.btnDefaultMobPpFilterAction{
+                    background: $red;
+                    span{color: #fff;}
+                }
+            }
+        }
+    }
+
+    .ems-custom-filtered{
+        border: none;
+        margin: 0;
+        &-header{
+            span{
+                font-size: 20px;
+            }
+        }
+        &-body{
+            max-width: 90%;
+            > ul{
+                > li{
+                    width: 100%;
+                }
+            }
+        }
+        &-left{
+            padding-right:10px;
+        }
+        &-right{
+            padding-left:10px;
+        }
+        &-footer{
+            max-width: 100%;
+            margin: 0 auto;
+            width: 100%;
+            > div{
+                width: 50%;
+                display: inline-block;
+                .btnDefault, .btnDefault span{
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+    
+    .sort-popup-ready{ 
+        overflow: hidden;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .sort-popup-animate{
+        .ems-mobile{
+            &-fixed-popup{
+                @include setTransform(translateX(0));
+            }    
+        }
+        .ems-mobile-sort-popup .ems-mobile-filter-sort{
+            .ems-mobile-filter-btn{ @include animation(opacityVail .3s cubic-bezier(0.230, 1.000, 0.320, 1.000)); opacity: 1; display: block;}
+        }
+        .vailSortPp{opacity: 1; visibility: visible;}
+    }
+
+}

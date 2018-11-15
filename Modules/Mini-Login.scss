@@ -1,0 +1,639 @@
+@media screen and (min-width: $breakpointXSM){
+    .ems-mod-brand-link{
+        > a{
+            display: block;
+            padding:13px 5px; 
+            text-align: center;
+            i{margin-right: 5px;}
+            span, i:before{
+                @include transition(all .2s ease);
+            }
+            i, span{
+                display: inline-block;
+                vertical-align: middle;
+            }
+            i, i:before{
+                font-size: 20px;
+            }
+            &:hover{
+                span, i:before{color: $red;}
+            }
+        }
+    }
+
+    .mod-mini-login{
+        &-header{
+            cursor: pointer;
+            padding:13px 5px;
+            text-align: center;
+            position: relative;
+            > span[id$="lbhKUTU_HESABIM"]{
+                @include transition(all .2s ease);
+                display: inline-block;
+                width: 100%;
+                max-width: 100px;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
+                position: relative;
+                padding-left: 30px;
+                height: 20px;
+                padding-top: 4px;
+                &:before{
+                    font-family: 'icomoon';
+                    content: '\e92b';
+                    font-size: 20px;
+                    display: inline-block;
+                    vertical-align: middle;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 20px;
+                    height: 20px;
+                    z-index: 1;
+                    @include transition(all .2s ease);
+                }
+                &:empty{display: none;}
+                &:hover{
+                    color: $red;
+                    &:before{
+                        color: $red;    
+                    }
+                }
+            }
+            > span[id$="lbfkutuUyeGiris1"]{
+                span, i:before{
+                    @include transition(all .2s ease);
+                }
+                span, .icon-ico_user{
+                    display: inline-block;
+                    vertical-align: middle;
+                }
+                .icon-ico_user{margin-right: 5px;}
+                .icon-ico_user, .icon-ico_user:before{
+                    font-size: 20px;
+                }
+                &:empty{display: none;}
+                &:hover{
+                    span, i:before{color: $red;}
+                }
+            }
+        }
+        .ems-user-info{
+            span[id$="lbfUYE_SAYIN"]{
+                display: block;
+                font-family:$avenir-bold;
+                font-size:14px;
+                padding:20px 30px;
+                text-align: left;
+                position: relative;
+                &:empty{display: none;}
+                > span{
+                    display: block;
+                    letter-spacing: 1.6px;
+                    &:after{
+                        content:'';
+                        display: inline-block;
+                        vertical-align: middle;
+                        width: 100%;
+                        height: 2px;
+                        background: #e1e1e1;
+                        max-width: 150px;
+                        margin-left: 20px;
+                    }
+                }
+                .mini-login-close{
+                    position: absolute;
+                    top: 50%;
+                    right: 10px;
+                    width: 30px;
+                    height: 30px;
+                    margin-top: -15px;
+                    z-index: 1;
+                    text-align: center;
+                    cursor: pointer;
+                    i{line-height: 30px;}
+                    i, i:before{
+                        font-size: 13px;
+                        color: #000;
+                    }
+                }
+            }
+        }
+        &-body{
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 100%;
+            max-width: 380px;
+            height:100%;
+            z-index: 16;
+            display: block;
+            @include transition(all 0.3s ease-in-out);
+            opacity: 0;
+            visibility: hidden;
+            .sub{
+                .ems-form{
+                    .ems-field{
+                        &-submit{
+                            .btnKutuLogin{
+                                span{ @include transition(all 0.2s ease); }
+                            }
+                        }
+                        &-free{
+                            span[id$="lbflnkUyeOlmak"]{
+                                a{
+                                    span{ @include transition(all .2s ease); }
+                                }
+                            }
+                        }
+                    }
+                }
+                .ems-user-pages{
+                    > div {
+                        a{
+                            &:hover{
+                                
+                            }
+                            &.btnKutuLogout{
+                                
+                            }
+                        }
+                    }               
+                }
+            }
+        }
+    }
+
+    .ems-login{
+        .vailLogin{
+            height: calc(100% - 60px);
+            top: 60px;
+        }
+        .mod-mini-login{
+            &-body{
+                position: absolute;
+                top: 60px;
+                right: 0;
+                height: auto;
+            }
+        }
+    }
+
+    .ems-logoff.mini-login-ready{
+        .mod-mini-login{
+            &-body{
+                display: block;
+            }
+        }
+    }
+    .ems-logoff.mini-login-animate{
+        .mod-mini-login{
+            &-body{
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+        .vailLogin{
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+    .ems-login.mini-login-ready{
+        .mod-mini-login{
+            &-body{
+                display: block;
+            }
+        }
+    }
+    .ems-login.mini-login-animate{
+        .mod-mini-login{
+            &-body{
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+        .vailLogin{
+            opacity: .5;
+            visibility: visible;
+        }
+    }
+    body.mini-login-ready{
+        overflow: hidden;
+    }
+}
+
+.mod-mini-login{
+    &-body{
+        background: #fff;
+        .sub {
+            display: none;
+            .ems-message{
+                display: block;
+                text-align: center;
+                margin-bottom: 0;
+                margin-top: 20px;
+                margin-left: 30px;
+                margin-right: 30px;
+                &:empty{
+                    display: none;
+                }
+            }
+            .sub-title{
+                display: block;
+                padding:20px 30px 20px 30px;
+                text-align: left;
+                position: relative;
+                span{
+                    display: block;
+                    font-size: 14px;
+                    color: $lDark;
+                    font-family: $avenir-bold;
+                    letter-spacing: 1.6px;
+                    &:after{
+                        content:'';
+                        display: inline-block;
+                        vertical-align: middle;
+                        width: 100%;
+                        height: 2px;
+                        background: #e1e1e1;
+                        max-width: 188px;
+                        margin-left: 20px;
+                    }
+                }
+                .mini-login-close{
+                    position: absolute;
+                    top: 50%;
+                    right: 25px;
+                    width: 30px;
+                    height: 30px;
+                    margin-top: -15px;
+                    z-index: 1;
+                    text-align: center;
+                    cursor: pointer;
+                    i{line-height: 30px;}
+                    i, i:before{
+                        font-size: 13px;
+                        color: $darkBlack;
+                    }
+                }
+            }
+            .ems-form{
+                &-inner{
+                    padding:15px 30px;
+                    .ems-field-flex{
+                        padding-top: 10px;
+                        @include flex();
+                        justify-content: space-between;
+                        align-items: center;
+                        @media screen and (min-width: $breakpointXSM){
+                            margin-left: 35px;
+                            margin-right: 35px;
+                        }
+                    }
+                    .ems-field{
+                        .seperator {
+                            span{
+                                font-style: italic;
+                                font-size: 13px;
+                                display: none;
+                                color: #757575;
+                                font-family: $mediumAA;
+                                &.tr{display: inline-block;}
+                            }
+                        }
+                        &-multiple{
+                            .seperator,
+                            span[id$="lbflnkUyeOlmak"]{
+                                display: inline-block;
+                                vertical-align: middle;
+                                .lnkUyeOlmak{
+                                    padding-top: 10px;
+                                    padding-bottom: 10px;
+                                    font-size: 13px;
+                                    color: #757575;
+                                    font-family: $mediumAA;
+                                    text-decoration: underline;
+                                    @include transition(all .2s ease);
+                                    @media screen and (min-width: $breakpointXSM){
+                                        &:hover{
+                                            color: $red;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        .ems-form-obj{
+                            input{
+                                background: transparent;
+                            }
+                        }
+                        #lnkSifremiUnuttum{
+                            display: inline-block;
+                            vertical-align: middle;
+                            padding-top: 10px;
+                            padding-bottom: 10px;
+                            span{
+                                font-size: 13px;
+                                color: #757575;
+                                font-family: $mediumAA;
+                            }
+                            @media screen and (min-width: $breakpointXSM){
+                                span{@include transition(all .2s ease);}
+                                &:hover{
+                                    span{color: $red;}
+                                }
+                            }
+                        }
+                        &-submit{
+                            .btnKutuLogini, a#lnkGuestCheckout{
+                                display: block;
+                                width: auto;
+                                border: 1px solid #000;
+                                padding-top: 12px;
+                                padding-bottom: 12px;
+                                @media screen and (min-width: $breakpointXSM){
+                                    margin-left: 35px;
+                                    margin-right: 35px;
+                                    &:hover{
+                                        background: $lDark;
+                                        span{color: $White;}
+                                    }
+                                }
+                            }
+                            a#lnkGuestCheckout{
+                                text-align: center;
+                                margin-top: 30px;
+                            }
+                        }
+                    }
+                    .pageLogin_btnFacebookLoginKutu{
+                        .btnFacebookLoginKutu{
+                            display: block;
+                            width: auto;
+                            margin-top: 10px;
+                            padding-top: 13px;
+                            padding-bottom: 13px;
+                            border: none;
+                            @media screen and (min-width: $breakpointXSM){
+                                margin-left: 35px;
+                                margin-right: 35px;
+                            }
+                        }
+                    }
+                }
+            }
+            .kutuUyeGiris_profilFoto {
+                display: none;
+            }
+            .ems-user-pages{
+                padding:0 30px 30px 30px;
+                > div {
+                    a{
+                        display:block;
+                        padding:10px 0;
+                        font-size: 16px;
+                        font-family: $regular;
+                        &.btnKutuLogout{
+                            border: none;
+                            padding:10px 0;
+                            display: block;
+                            width: auto;
+                            color: $red;
+                            text-align: left;
+                            span{font-size: 16px;}
+                        }
+                        @media screen and (min-width: $breakpointXSM){
+                            &:hover{
+                                color: $red;
+                            }
+                        }
+                    }
+                }               
+            }
+        }
+    }
+    &-footer{ display: none; }
+}
+
+.vailLogin{z-index:15;}
+
+body.ems-logoff{
+    .mod-mini-login{
+        &-body{
+            .sub.logoff{ display: block; }
+        }
+    }
+}
+body.ems-login{
+    .mod-mini-login{
+        &-body{
+            .sub.login{ display: block; }
+        }
+    }
+}
+
+//////////////////////////////////
+body.ems-logoff.mini-login-ready{
+    .mod-mini-login{
+        &-body{
+            .sub.logoff{ display: block; }
+        }
+    }
+}
+body.ems-login.mini-login-ready{
+    .mod-mini-login{
+        &-body{
+            .sub.login{ display: block; }
+        }
+    }
+}
+
+@media screen and (max-width: $breakpointXSM){
+    .mod-mini-login{
+        &-header{
+            height: 60px;
+            > span[id$="lbhKUTU_HESABIM"]{
+                &:empty{display: none;}
+                position: fixed;
+                top: 0;
+                left: 0;
+                color: #000;
+                display: block;
+                padding:24px 50px 21px 50px;
+                font-size: 14px;
+                width: 100%;
+                background:#fbfbfb;
+                z-index: 1;
+                &:before{
+                    font-family: 'icomoon';
+                    content:'\e92b';
+                    font-size: 20px;
+                    color: #000;
+                    width: 30px;
+                    height: 30px;
+                    display: inline-block;
+                    vertical-align: middle;
+                    text-align: center;
+                    line-height: 30px;
+                    position: absolute;
+                    top: 50%;
+                    margin-top: -15px;
+                    left: 15px;
+                }
+                &:after{
+                    font-family: 'icomoon';
+                    content:'\e900';
+                    font-size: 11px;
+                    color: #000;
+                    width: 30px;
+                    height: 30px;
+                    display: inline-block;
+                    text-align: center;
+                    line-height: 30px;
+                    position: absolute;
+                    top: 50%;
+                    margin-top: -15px;
+                    right: 15px;
+                    @include setTransform(rotate(0));
+                }
+            }
+            > span[id$="lbfkutuUyeGiris1"]{
+                .icon-ico_user{display: none;}
+                &:empty{display: none;}
+                color: #000;
+                display: block;
+                padding:24px 10px 21px 10px;
+                font-size: 14px;
+                width: 100%;
+                background:#fbfbfb;
+                z-index: 1;
+                position: relative;
+                max-height: 60px;
+                &:before{
+                    display: none;
+                }
+                &:after{
+                    font-family: 'icomoon';
+                    content:'\e900';
+                    font-size: 11px;
+                    color: #000;
+                    width: 30px;
+                    height: 30px;
+                    display: inline-block;
+                    text-align: center;
+                    line-height: 30px;
+                    position: absolute;
+                    top: 50%;
+                    margin-top: -15px;
+                    right: 15px;
+                    @include setTransform(rotate(180deg));
+                }
+                .member-login-rdc,
+                .login-page-rdc{
+                    display: inline-block;
+                     vertical-align: middle;
+                     min-width: 50%;
+                }
+                .login-page-rdc,
+                .member-login-rdc{
+                    a{
+                        position: relative;
+                        padding-left: 35px;
+                        span{
+                            display: inline-block;
+                            vertical-align: middle;
+                        }
+                        .icon-ico_user, .icon-ico_enter{
+                            width: 30px;
+                            height: 30px;
+                            display: inline-block;
+                            text-align: center;
+                            line-height: 30px;
+                            position: absolute;
+                            top: 50%;
+                            left: 0;
+                            margin-top: -15px;
+                        }
+                        .icon-ico_user, .icon-ico_user:before,
+                        .icon-ico_enter,.icon-ico_enter:before{
+                            font-size: 20px;
+                        }
+                    }
+                }
+            }
+        }
+        &-body{
+            background:#fbfbfb;
+            .sub{
+                .ems-message{margin-top: 0;}
+                .sub-title{
+                    text-align: center;
+                    .mini-login-close{left: 20px;}
+                }
+                .ems-user-info{
+                    position: relative;
+                    display: block;
+                    font-size: 14px;
+                    color: #fff;
+                    .member-account{display: none;}
+                    .mobile-user-popup-close{
+                        cursor: pointer;
+                        position: absolute;
+                        left: 8px;
+                        width: 40px;
+                        text-align: center;
+                        padding: 5px;
+                        top: 21px;
+                        height: 30px;
+                    }
+                    span[id$="lbfUYE_SAYIN"]{display: none; }
+                }
+                .ems-user-pages{
+                    padding-left: 10px;
+                    padding-right: 10px;
+                    padding-bottom: 0;
+                    > div a{
+                        padding: 10px;
+                        font-size: 14px;
+                        &.btnKutuLogout{
+                            padding-left: 10px;
+                            padding-right: 10px;
+                            color: #000;
+                            span{font-size: 14px;}
+                        }
+                    }
+                }
+            }
+        }
+    }
+    body.ems-login{
+        .mod-mini-login-body{
+            .sub.login{ display: none; }
+        }
+        .mod-mini-login.opened{
+            .mod-mini-login-header{
+                > span[id$="lbhKUTU_HESABIM"]:after{
+                    @include setTransform(rotate(180deg));
+                }
+            }
+            .mod-mini-login-body{
+                .sub.login{ display: block; }
+            }
+        }
+    }
+    body.ems-logoff{
+        .mod-mini-login-body{
+            .sub.logoff{ display: none; }
+            .sub .sub-title{display: none;}
+            .ems-form-inner{padding: 10px;}
+        }
+        .mod-mini-login{
+            .mod-mini-login-header{
+                > span[id$="lbfkutuUyeGiris1"]:before{content:'\e90b';}
+                > span[id$="lbfkutuUyeGiris1"]:after{display: none;}
+            }
+        }
+    }
+    body.ems-logoff.mini-login-ready .mod-mini-login-body .sub.logoff{display: none;}
+}

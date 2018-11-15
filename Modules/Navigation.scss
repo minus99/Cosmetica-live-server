@@ -1,0 +1,62 @@
+.navigasyon {
+    > span{
+        display: block;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        &:empty{
+            display: none;
+        }
+        a{
+            display: inline-block;
+            padding: 10px 10px 10px 0;
+            font-size: 12px;
+            color: #9f9f9f;
+            @media screen and (min-width: 850px){
+                &:hover{
+                    color: $red;
+                }
+            }
+            &:before{
+                content:'/';
+                display: inline-block;
+                vertical-align: middle;
+                margin-right: 10px;
+                color: #9f9f9f;
+            }
+            &:first-child{
+                &:before{
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+.icerikListePagingUst,
+.icerikListePagingAlt,
+.icerik_ratingbar{ display: none; }
+
+@media screen and (max-width: $breakpointXSM){
+    .navigasyon {
+        > span{
+            background: $Gray;
+            a{
+                padding: 0;
+                display: block;
+                font-size: 24px;
+                color: $lDark;
+                &.homePageBtn{display: none;}
+                
+                &.navigasyonSeviye2,
+                &.navigasyonSeviye3,
+                &.navigasyonSeviye4{
+                    display: none;
+                    font-size: 18px;
+                }
+                &.navigasyonSeviye2{}
+                &.navigasyonSeviye3{}
+                &.navigasyonSeviye4{}
+            }
+        }
+    }
+}

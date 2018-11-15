@@ -1,0 +1,306 @@
+.ems-page-member.hidden-left-menu{
+    .ems-col-left{display: none;}
+    .ems-col-full{width: 100%; padding-left: 0; padding-right: 0; float: none;}
+    > .ems-container {max-width: 1400px;}
+}
+
+.service-list-wrp {
+    .ems-container {
+        .ems-col-full {
+            width: 100% !important;
+            padding-left: 0px !important;
+        }
+    }
+    .ems-col-full {
+        width: 100%;
+        border: 0;
+        min-height: auto;
+        padding: 0;
+    }
+}
+
+.mod-service-list{
+    &-inner{
+        min-height: 500px;
+        position: relative;
+    }
+    &-header{
+        width: 100%;
+        float: left;
+        margin-top: 30px;
+        > span > span{
+            display: block;
+            padding-bottom:28px;
+            font-size: 16px;
+            font-family: $avenir-bold;
+
+        }
+        .ems-form{
+            &-inner{
+                @include flex();
+                margin-bottom: 20px;
+                .ems-field{
+                    .ems-form-label{
+                        width: auto;
+                        display: none;
+                    }
+                    .ems-form-obj{
+                        padding-bottom: 0;
+                        .sStylerWrp {
+                            height: 42px;
+                            line-height: 30px;
+                        }
+                        input[type="text"] {
+                            height: 42px;
+                            line-height: 30px;
+                        }
+                        &-btn {
+                            display: inline-block !important;
+                        }
+                    }
+                    &.select-2{
+                        margin-right: 20px;
+                        max-width: 120px;
+                    }
+                    &.select-4{
+                        max-width: 260px;
+                        position: relative;
+                        a.btnSrvArama{
+                            position: absolute;
+                            right: 0px;
+                            top: 0px;
+                            width: auto;
+                            padding: 11px 10px;
+                            i {
+                                font-size: 20px;
+                            }
+                        }
+                        input {
+                            padding-right: 38px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .address-detail {
+        position: absolute;
+        right: 0;
+        height: 100%;
+        width: 100%;
+        max-width: 760px;
+        width: calc(100% - 420px);
+    }
+    
+    &-body{
+        @media screen and (min-width: 850px){
+        width: 420px;
+        height: 100%;
+        padding-bottom: 20px;
+            ::-webkit-scrollbar {
+                width: 0;
+            }
+            ::-webkit-scrollbar-track {
+                background: $Gray;
+            }
+            ::-webkit-scrollbar-thumb {
+                background: $lDark;
+            }
+            ::-webkit-scrollbar-thumb:window-inactive {
+                background: $lDark;
+            }
+            &:hover{
+                ::-webkit-scrollbar {
+                    width: 4px;
+                }
+            }
+        }
+    }
+    .address-detail {
+        .back-btn,
+        .toggle-map,
+        .left-column{display: none;}
+        &-inner {
+            height: 100%;
+            width: 100%;
+        }
+        .right-column {height: 100%;}
+        .map{
+            width: 100%;
+            height: calc(100% - 0px);
+        }
+    }
+    
+    .service-list{
+        @media screen and (min-width: 850px){
+            width: 95%;
+            height: 100%;
+            max-height: 501px;
+            overflow-x: hidden;
+            padding-right: 20px;
+        }
+    }
+    .servisIcerik{
+        @include flex();
+        flex-wrap: wrap;
+        align-items: flex-start;
+        .servis_bilgi{display: none;}
+        .pServisListe {
+            @include flex();
+            @include flexDirection(column);
+            justify-content: flex-start;
+            width: 100%;
+            overflow: hidden;
+            margin-bottom: 25px;
+            position: relative;
+            > div{
+                &:empty{display: none;}
+            }
+            .divServisListe_FirmaAdi{
+                font-size: 14px;
+                order: 1;
+                padding: 5px 0;
+                font-weight: bold;
+                position: relative;
+            }
+            .divServisListe_Adres{
+                order: 3;
+                line-height: 22px;
+                font-size: 14px;
+                overflow: hidden;
+                font-family: $mediumAA;
+            }
+            .divServisListe_Telefon{
+                order: 3;
+                position: absolute;
+                right: 0;
+                top: 5px;
+                z-index: 1;
+                a {
+                    display: inline-block;
+                    span {
+                        font-size: 0;
+                        display: inline-block;
+                        &:before {
+                            content:'\e91e';
+                            font-family: 'icomoon';
+                            font-size: 20px;
+                            display: inline-block;
+                            padding: 3px;
+                            border-radius: 5px;
+                        }
+                        &:empty {
+                            display: none;
+                        }
+                    }
+                    &:hover {
+                        span {
+                            &:before {
+                                background:$btnAlternateColor;
+                                color: #fff;
+                            }
+                        }
+                    }
+                }
+                
+            }
+            .divServisListe_Email{
+                display: none;
+                order: 4;
+                margin-left: 15px;
+                margin-right: 15px;
+            }
+            .divServisListe_Koordinat{
+                order: 5;
+                margin-left: 15px;
+                margin-right: 15px;
+                > a{
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    display:block;
+                    width: 100%;
+                    height: 100%;
+                    span{
+                        font-size: 14px;
+                        font-family: $mediumA;
+                        color: #fff;
+                        display: none;
+                    }
+                    &.show-map-btn{
+                        display: none;
+                    }
+                }
+            }
+            .divServisListe_DepoSec,
+            .divServisListe_ServisTur,
+            .divServisListe_WebAdresi,
+            .divServisListe_UlkeSehirSemt,
+            .divServisListe_Fax,
+            .tableServisListe_tdResim{display: none;}
+            .divServisListe_Yetkili {order: 2; color: $light; margin: 7px 0;}
+        }
+    }
+}
+
+@media screen and (min-width: 850px) and (max-width: 1024px){
+    .mod-service-list-header .ems-form-inner .ems-field.select-2,
+    .mod-service-list-header .ems-form-inner .ems-field.select-3{margin-right: 10px;}
+}
+
+@media screen and (max-width: $breakpointXSM){
+    .mod-service-list{
+        &-inner{
+            max-width: 100%;
+            margin-left: auto;
+        }
+        &-header{
+            margin: 0;
+            > span > span{
+                font-size: 18px;
+            }
+            .ems-form{
+                &-inner{
+                    @include flex();
+                    @include flexDirection(row);
+                    margin-bottom: 0;
+                    .ems-field{
+                        &.select-2,
+                        &.select-3{
+                            margin-right: 0;
+                        }
+                        &.select-2 {
+                            width: 50%;
+                            max-width: none;
+                            margin-right: 15px;
+                        }
+                        &.select-4{
+                            margin-bottom: 0;
+                            width: 50%;
+                            max-width: none;
+                        }
+                    }
+                }
+            }
+        }
+        .servisIcerik{
+            padding:20px 20px 40px 20px; 
+            .pServisListe{
+                width: 100%;
+                max-width: 100%;
+            }
+        }
+        .address-detail {
+            position: relative;
+            width: 100%;
+            max-width: none;
+            display: inline-block;
+            height: 260px;
+        }
+    }
+    .service-list-layout{
+        .ems-pay-info{
+            background: #f6f7f9;
+        }
+    }
+}

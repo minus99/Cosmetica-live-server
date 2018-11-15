@@ -1,0 +1,447 @@
+/*/////////////////////////////////////////      BRAND PAGE      /////////////////////////////////////////*/
+.markaSayfaKapsayici {
+  max-width: 1280px;
+  padding: 0 20px;
+  margin: 10px auto;
+  min-height: 600px;
+}
+.markaSayfasi {
+  padding: 0 20px;
+
+  .col1 {
+    max-width: 130px !important;
+    float: left;
+    width: 100%;
+    margin: 0px 30px 0 0;
+    padding: 0;
+    border: 0;
+  }
+
+  a {
+    color: $lDark;
+  }
+
+  a:hover {
+    color: $red !important;
+  }
+
+  .markaAlfabeBaslik {
+    margin-bottom: 45px;
+
+    span {
+      font-family: $avenir-bold;
+      font-size: 18px;
+      display: inline-block;
+      margin-top: 30px;
+      line-height: 1.5;
+      margin-bottom: -10px;
+      background: #fff;
+      padding-right: 10px;
+      position: relative;
+      z-index: 1;
+    }
+
+    &:after {
+      content: '';
+      height: 2px;
+      width: 100%;
+      display: block;
+      background: #d3d3d3;
+      position: relative;
+      bottom: 5px;
+    }
+  }
+
+  .col0 {
+    width: 100%;
+  }
+
+  .col1 {
+    a {
+      font-size: 14px;
+      display: block;
+      padding: 0 10px 0 0px;
+
+      &.tumMarkalar {
+        line-height: 30px;
+        font-family: $bold;
+      }
+    }
+
+    .markaMenu {
+      a {
+        line-height: 30px;
+      }
+      li.select a {
+        color: $red;
+      }
+    }
+  }
+
+  .col2 {
+    padding: 0 !important;
+    position: relative;
+    overflow: hidden;
+    float: none;
+    border: 0;
+
+    .markaAlfabe {
+      padding: 0 0 15px 0px;
+      margin-bottom: 20px;
+      width: 100%;
+      display: inline-block;
+      ul {
+        display: table;
+        width: 100%;
+        table-layout: fixed;
+
+        li {
+          display: table-cell;
+          width: auto !important;
+          text-align: center;
+
+          a {
+            font-size: 18px;
+            color: $lDark;
+            display: inline-block;
+            padding: 12px 0 10px 0;
+            max-width: 40px;
+            width: 100%;
+            text-align: center;
+            border-radius: 3px;
+
+            &:hover {
+              background: $red;
+              color: #fff !important;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .markaLogolar {
+    display: inline-block;
+    width: 100%;
+
+    ul { padding: 0; }
+    li {
+      float: left;
+      width: 25%;
+      text-align: center;
+      padding: 0 0 0px 1.5%;
+      margin-bottom: 20px;
+      box-sizing: border-box;
+      position: relative;
+      overflow: hidden;
+
+      span {
+        width: 100%;
+        display: none;
+        padding: 10px 0;
+        background: #f5f5f5;
+        max-height: 35px;
+      }
+
+      a {
+        display: block;
+        border: 1px solid #ededed;
+        width: 100%;
+        @include transition(border 1s ease);
+
+        img {
+          margin: 20px 0;
+          opacity: .6;
+          @include transition(opacity 0.2s ease);
+        }
+
+        &:hover {
+          border-color: $red;
+
+          img {
+            opacity: 1;
+          }
+        }
+      }
+    }
+
+    &.selected li {
+      display: none;
+
+      &.selected {
+        display: block;
+      }
+    }
+  }
+
+  .col2 .markaAlfabe ul li.selected a {
+    background: #eee;
+  }
+
+  .markaYazi {
+    margin: 30px 0;
+
+    span {
+      font-size: 20px;
+      font-family: $mediumA;
+
+      i {
+        font-size: 25px;
+        position: relative;
+        top: 3px;
+      }
+    }
+
+    p {
+      line-height: 20px;
+    }
+  }
+}
+
+@media screen and (min-width: 500px) {
+  .markaSayfasi .col2 .markaAlfabe ul {
+    transition: none !important;
+    transform: none !important;
+  }
+
+  .mrk-menu-selecbox {
+    display: none !important;
+  }
+}
+
+.markaLinkKapsayici {
+  width: 100%;
+  padding: 45px 0;
+
+  .markaLink {
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+    width: 100%;
+    padding-bottom: 30px;
+
+    >ul {
+      display: inline-block;
+      width: 100%;
+    }
+    li.kolon {
+      float: left;
+      width: 25%;
+      padding: 0 8% 0 8%;
+      border-right: 1px solid #ddd;
+
+      &:last-child {
+        border: 0;
+        padding-right: 0;
+      }
+
+      h1 {
+        font-family: 'MavenProBold';
+        font-size: 15px;
+        color: #6d6d6d;
+        margin-bottom: 35px;
+        letter-spacing: -1px;
+        height: 20px;
+      }
+
+      a {
+        font-size: 14px;
+        color: #6d6d6d;
+        line-height: 20px;
+
+        &:hover {
+          color: #e14616;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: $breakpointXSM) {
+  .markaSayfasi {
+    padding: 0;
+
+    .markaLogolar {
+      li {
+        width: 33.333%;
+      }
+    }
+
+    .markaAlfabeBaslik {
+      margin-bottom: 25px;
+    }
+
+    .col1 {
+      a.tumMarkalar {
+        text-align: center;
+      }
+    }
+  }
+
+  .mrk-menu-selecbox {
+    display: block !important;
+
+    .sStylerWrp {
+      background: #f6f6f6 !important;
+      border-bottom: 1px solid #e1e1e1 !important;
+      padding: 10px 20px 10px 20px;
+      height: 50px !important;
+      line-height: 40px !important;
+    }
+  }
+
+  .mrkMobiMenu {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+
+  /*/////////////////////////////////////////      BRAND PAGE      /////////////////////////////////////////*/
+
+  .markaSayfasi {
+    .col1 {
+      max-width: none !important;
+      margin: 0;
+    }
+    .col2 {
+      width: 100%;
+      display: inline-block;
+
+      .markaAlfabe {
+        border: 0;
+        margin: 20px 0 0 0;
+
+        ul li {
+          width: 60px !important;
+          a {
+            font-size: 18px;
+          }
+        }
+      }
+    }
+
+    .col1 a.tumMarkalar {
+      font-size: 18px;
+    }
+
+    .col2 {
+      margin-left: auto;
+      overflow: visible;
+    }
+    .markaLogolar {
+      padding: 0 !important;
+
+      ul {
+        margin: 0;
+        display: grid;
+        grid-gap: 10px;
+        grid-template-columns: 1fr 1fr;
+      }
+
+      li {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+      }
+    }
+
+    .markaMenu {
+      width: 100%;
+      padding: 0 !important;
+      border-bottom: 1px solid #ededed;
+      display: inline-block;
+
+      ul li {
+        width: 100%;
+        float: left;
+        text-align: center;
+        a {
+          padding: 10px 0;
+          font-size: 14px;
+          font-family: $mediumA;
+          line-height: 20px !important;
+        }
+        &:last-child {
+          border: 0;
+        }
+      }
+    }
+
+    .markaLogolar {
+      padding: 0 20px;
+      margin: 0;
+    }
+  }
+}
+
+/* Basic sample */
+.fBookContainter {
+  padding: 0px;
+}
+.flipbook-viewport {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+.flipbook-viewport .container {
+  margin: 40px auto;
+  display: grid;
+  max-width: none !important;
+}
+
+.flipbook-viewport .page {
+  width: 461px;
+  height: 600px;
+  background-color: white;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.flipbook .page {
+  -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  -ms-box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  -o-box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.flipbook-viewport .page img {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  margin: 0;
+}
+
+.flipbook-viewport .shadow {
+  -webkit-transition: -webkit-box-shadow 0.5s;
+  -moz-transition: -moz-box-shadow 0.5s;
+  -o-transition: -webkit-box-shadow 0.5s;
+  -ms-transition: -ms-box-shadow 0.5s;
+
+  -webkit-box-shadow: 0 0 20px #ccc;
+  -moz-box-shadow: 0 0 20px #ccc;
+  -o-box-shadow: 0 0 20px #ccc;
+  -ms-box-shadow: 0 0 20px #ccc;
+  box-shadow: 0 0 20px #ccc;
+}
+
+.pdfBtn {
+  text-align: center;
+
+  a {
+    background: $red;
+    color: #fff;
+    border-radius: 3px;
+    margin: 20px auto;
+    display: inline-block;
+    padding: 10px 20px;
+
+    &:hover {
+      background: #ef76b0;
+    }
+  }
+}

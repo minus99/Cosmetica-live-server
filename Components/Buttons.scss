@@ -1,0 +1,123 @@
+@media screen and (min-width: $breakpointXSM){ 
+    a.btnDefault, .ems-col.ems-col-link a{
+        &:hover {
+            //background:$lDark;
+        }
+    }    
+}
+
+a.btnDefault, .ems-col.ems-col-link a{
+    position: relative;
+    display: inline-block;
+    padding: 13px 10px;
+    font-family: $bold;
+    font-size: 14px;
+    color: #000;
+    background: none;
+    text-align: center;
+    font-weight: normal;
+    width: 100%;
+    line-height: 1;
+    @include transition(all 0.2s ease);
+    span {
+        @include transition(all 0.2s ease);
+        font-size: 14px; 
+    }
+    @at-root {
+        &-text, a.btnAdresListeGuncelle, a.btnAdresListeSil, a.btnSatisSozlesmeOnizle, a.btnOnBilgilendirmeFormOnizle, a.btnHediyeCekiKullan, a.btnSepeteAtFavori, a.btnStokHaberciFavori, a.btnFavoriListeSil, a.btnTakipListeFiySil, a.btnTakipListeStokSil, a.btnIadeDetay, a.btnYorumGonderEvet, a.btnYorumGonderHayir {
+            background: none;
+            padding: 0;
+            font-size: inherit;
+            color: inherit;
+            &:hover {
+                background: inherit;
+            }
+        }
+        &-full, .pageLogin_btnFacebookLogin > table, a.btnFacebookLogin, a.btnYeniUyeKaydet, a.btnLogin, a.btnUyeBilgi, a.btnSifreGuncelle, a.btnIade, a.btnAdresKaydet {
+            width: 100%;
+        }
+        .urunDetay_btnSepeteAt > table, .urunListe_favoriEkle > table, .urunDetay_btnStokHaberci > table, .ems-cart-coupon > table, .pageLogin_btnFacebookLoginKutu > table, .pageLogin_btnFacebookLogin > table, .pageLogin_btnUyeSifreGonder > table {
+            display: table !important;
+            width: 100%;
+        }
+        a.btnFacebookLogin, a.btnFacebookLoginKutu {
+            background: $fbBtnColor;
+            span {
+                color: #fff;
+                .icon-ico_facebook{
+                    float: left;
+                }
+            }
+            &:hover {
+                background: $fbBtnColor;
+            }
+        }
+    }
+    &.btnDefaultBlack,&.btnDefaultAlternate{
+        border:1px solid #000;
+        max-width: 250px;
+        margin: 0 auto;
+        width: 100%;
+        display: block; 
+        font-family: $bold;
+        font-size: 14px;
+        padding-top: 12px;
+        padding-bottom: 12px;
+        @media screen and (min-width: $breakpointXSM){
+            &:hover {
+                background: $lDark;
+                span{color: $White;}
+            }
+        }
+    }
+} 
+
+.btnAlternate{
+    display: inline-block;
+    background: #ffffff;
+    border: solid 1px #000000;
+    padding: 11px 10px 11px 10px;
+    width: 100%;
+    max-width: 250px;
+    text-align: center;
+    span{
+        font-family: $bold;
+        font-size: 15px;
+        color: $darkBlack;
+        @include transition(all 0.2s ease);
+    }
+    span,i{display: inline-block; vertical-align: middle;}
+    i{margin-left: 10px;}
+    i:before{
+        @include transition(all 0.2s ease);
+    }
+    &:hover{
+        @media screen and (min-width: $breakpointXSM){
+            background: #000;
+            span{
+                color: #fff;
+            }
+        }
+    }
+}
+
+.link-btn{
+    display: inline-block;
+    color: #fff;
+    letter-spacing: 1px;
+    font-family: $regular;
+    font-size: 15px;
+    > span, i{
+        display: inline-block;
+        vertical-align: middle;
+    }
+    i{
+        position: relative;
+        top: -2px;
+        margin-left: 10px;
+        &:before{
+            color: #fff;
+            font-size: 11px;
+        }
+    }
+}

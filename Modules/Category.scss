@@ -1,0 +1,278 @@
+.kutuKategori{
+    .kutuFooterDefault {
+        display: none;
+    }
+    .kutuHeaderKategori{
+        .btnCatShow{
+            text-align: left;
+            font-family: $avenir-bold;
+            font-size: 14px;
+            letter-spacing: 1px;
+            padding: 18px 20px 17px 0;
+            position: relative;
+            cursor: pointer;
+            @media screen and (min-width: $breakpointXSM){
+                text-transform: uppercase;
+            }
+            &:after{
+                font-family: 'icomoon';
+                content: "\e900";
+                line-height: 14px;
+                font-size: 12px;
+                width: 12px;
+                height: 12px;
+                position: absolute;
+                top: 50%;
+                right: 0;
+                margin-top: -7px;
+                @include setTransform(rotate(180deg));
+            }
+        }
+    }
+    ul.menuKategori{
+        li{
+            .filter-count,
+            b{ display: none; }
+            a{
+                display:block;
+                padding: 11px 5px 10px 0;
+                position: relative;
+                font-family: $regular;
+                font-size: 14px;
+                color: $lDark;
+                @media screen and (min-width: 850px){
+                    &:hover{
+                        color: $red;
+                    }
+                }
+            }
+        }
+        > li{
+            &.s1 {
+                > a{display: none;}
+            }
+            &.opened{
+                > ul{
+                    display: block;
+                }
+            }
+            > ul{
+                > li{
+                    > ul{ display: none; }
+
+                    &.s2 {
+                        @media screen and (min-width: 850px){
+                            position: relative;
+                            ::-webkit-scrollbar {
+                                width: 3px;
+                            }
+                            ::-webkit-scrollbar-track {
+                                background: $Gray;
+                            }
+                            ::-webkit-scrollbar-thumb {
+                                background: $lDark;
+                            }
+                            ::-webkit-scrollbar-thumb:window-inactive {
+                                background: $lDark;
+                            }
+                            > b{
+                                display: block;
+                                position: absolute;
+                                width: 15px;
+                                height: 15px;
+                                top: 12px;
+                                right: 0;
+                                text-align: center;
+                                cursor: pointer;
+                                &:before{
+                                    font-family:'icomoon';
+                                    content:'\e920';
+                                    font-size: 9px;
+                                    line-height: 15px;
+                                    color: #000;
+                                }
+                            }
+                            > ul{
+                                overflow-x: hidden;
+                                max-height: 180px;
+                                margin-top: 10px;
+                                margin-bottom: 10px;
+                            }
+                            > a{
+                                margin-right: 20px;
+                            }
+                            &.opened{
+                                > b{
+                                    &:before{
+                                        content:'\e918';
+                                    }
+                                }
+                            }
+                        }
+                        > a{
+                            font-family: $bold;
+                            font-size: 15px;
+                        }
+                    }
+                    &.s2.act{
+                        > a.active{color: $red;}
+                    }
+                    a.active{ color: $red; }
+                }
+            }
+        }
+    }
+}
+.kutuKategori.kapali{
+    .kutuHeaderKategori{
+        .btnCatShow{
+            &:after{
+                @include setTransform(rotate(0deg));
+            }
+        }
+    }
+}
+
+.kutuSolMenuTree{
+    .sStylerMainWrp.sStylerWrp_select,
+    .kutuHeaderSolMenuTree{display:none;}
+
+    .kutuBodyDefault{
+        > ul{
+            > li{
+                b{display:none;}
+                > a{
+                    padding-bottom: 30px;
+                    font-family: $mediumA;
+                    font-size: 36px;
+                    display: none;
+                }
+                > ul{
+                    display: table;
+                    width: 100%;
+                    > li{
+                        line-height: 30px;
+                        a{
+                            display: block;
+                            font-size: 15px;
+                            color: #000000;
+                            font-family: $regular;
+                            padding: 5px 0px;
+                            position: relative;
+                            line-height: 25px;
+                            @media screen and (min-width: $breakpointXSM){
+                                &:hover{
+                                    color: $red;
+                                }
+                            }
+                        }
+                        &.act{
+                            a{
+                                font-family: $bold;
+                                &:after{
+                                    content: '';
+                                    width: 3px;
+                                    height: 70%;
+                                    background: #ee0676;
+                                    position: absolute;
+                                    right: 0;
+                                    top: 15%;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $breakpointXSM){
+    .kutuKategori{
+        .kutuHeaderKategori{
+            > span{
+                .btnCatShow{
+                    transition: none;
+                    font-family: $regular;
+                    font-size: 14px;
+                    border-bottom: 1px solid $Gray;
+                    padding-top: 23px;
+                    padding-bottom: 22px;
+                    padding-right: 50px;
+                    padding-left: 15px;
+                    width: auto;
+                    display: block;
+                    margin-left: 10px;
+                    margin-right: 10px;
+                    > span{
+                        &.mobile-element {
+                            float: right;
+                            color: #6c6c6c;
+                            letter-spacing: 0;
+                            width: 50%;
+                            overflow: hidden;
+                            min-height: 15px;
+                            white-space: nowrap;
+                            text-overflow: ellipsis;
+                        }
+                    }
+                    &:after{
+                        content: '\e903';
+                        transform: none;
+                        width: 30px;
+                        font-size: 15px;
+                        height: 30px;
+                        text-align: center;
+                        line-height: 30px;
+                        right: 5px;
+                        margin-top: -15px;
+                    }
+                }
+            }
+        }
+        ul.menuKategori{
+            padding: 10px 25px;
+            > li > ul{padding-left: 0;}
+        }
+    }
+    .kutuSolMenuTree{
+        .kutuBodySolMenuTree {display: none;}
+        .sStylerMainWrp.sStylerWrp_select{display: block;}
+        .sStylerMainWrp.kutu-body-sol-menu-selecbox{
+            .sStylerWrp{
+                background: #f6f6f6;
+                border-bottom: 1px solid $Gray;
+                font-family: $mediumA;
+                color: #6c6c6c;
+                font-size: 14px;
+                padding: 10px 20px 10px 20px;
+                height: 50px;
+                line-height: 30px;
+                display: block;
+                &:after{
+                    right: 20px;
+                }
+                select{padding: 10px;}
+            }
+        }
+    }
+    body.mobiOpened {
+        .kutuKategori .kutuHeaderKategori > span .btnCatShow{
+            border-bottom: none;
+            text-align: right;
+            background: #fbfbfb;
+            margin-left: 0;
+            margin-right: 0;
+            padding-left: 50px;
+            padding-right: 15px;
+            > span{
+                &.mobile-element{display: none;}
+            }
+            &:after{
+                right: inherit;
+                left: 15px;
+                @include setTransform(rotate(180deg));
+            }
+        }
+    }
+}

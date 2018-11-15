@@ -1,0 +1,13 @@
+//Helvetica
+@include fontFace('regular', '/styles/fonts/helvetica/regular/Helvetica', normal);
+@include fontFace('bold', '/styles/fonts/helvetica/bold/Helvetica-Bold', normal);
+@include fontFace('tl', '/styles/fonts/tl/abakutlsymsans', normal);
+
+//Avenir
+@include fontFace('regularA', '/styles/fonts/avenir/AvenirNext-Regular/AvenirNext-Regular', normal);
+@include fontFace('mediumA', '/styles/fonts/avenir/AvenirNext-Medium/AvenirNext-Medium', normal);
+@include fontFace('avenir-bold', '/styles/fonts/avenir/AvenirNext-Bold/AvenirNext-Bold', normal);
+@include fontFace('avenir-medium', '/styles/fonts/avenir/AvenirNext-Demi-Bold/AvenirNextDemiBold', normal);
+
+//Federic
+@include fontFace('federic', '/styles/fonts/federic/frederickathegreat-regular-webfont', normal);

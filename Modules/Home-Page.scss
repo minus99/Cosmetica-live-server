@@ -1,0 +1,664 @@
+.sayfaIcDiv{
+    width: 100%;
+    margin: 0 auto;
+}
+
+.ems-page{
+    &-home{
+        .order-gray{
+            background:$Gray;
+        }
+    }
+}
+
+.ems-pay-info {
+    max-width: 1240px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    ul{
+        display: table;
+        table-layout: fixed;
+        width: 100%;
+        li{
+            display: table-cell;
+            vertical-align: middle;
+            width: 25%;
+            .step {
+                text-align: left;
+                > div{
+                    width: 30px;
+                    height: 30px;
+                    text-align: center;
+                    display: inline-block;
+                    vertical-align: middle;
+                }
+                i{line-height: 30px;}
+                i, i:before{
+                    font-size: 20px;
+                }
+                p{
+                    margin-top: 0;
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}
+
+.site-video-player{
+    position: relative;
+    margin-top: 40px;
+    &-overload{
+        position: relative;
+        overflow: hidden;
+        &:after{
+            content:'';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,.4);
+        }
+    }
+    &-text{
+        position: absolute;
+        bottom: 50px;
+        left: 50px;
+        width: 100%;
+        max-width: 350px;
+        height: auto;
+        z-index: 1;
+        @media screen and (min-width: $breakpointXSM){
+            @include transition(all .2s ease);
+        }
+        > span{
+            display: block;
+            color: #fff;
+            &.new{min-width: 45px; padding: 5px; color: #30de86; font-family: $bold; font-size: 14px; background: #fff; text-align: center; display: inline-block; margin-bottom: 25px; }
+            &.title1{font-family: $avenir-medium; font-size:30px;}
+            &.title2{font-family: $regular;font-size:14px; margin-top: 10px; line-height: 21px;}
+        }
+        .btnAlternate{ margin-top: 20px; max-width: 210px; }
+    }
+    &-player{
+        position: absolute;
+        top: 50%;
+        width: 90px;
+        height: 90px;
+        left: 0;
+        right: 0;
+        margin: -45px auto 0 auto;
+        @include transition(all .2s ease);
+        a{
+            width: 90px;
+            height: 90px;
+            border-radius: 100%;
+            display: block;
+            text-align: center;
+            position: relative;
+            background:url(#{$baseHref + "/UPLOAD/BANNERS/home-page/video/video-triangle.png"}) 36px 25px no-repeat #fff;
+            span{display: none;}
+            transition: none;
+        }
+    }
+    video{
+        width: 100%;
+        height: auto;
+        max-height: 550px;
+        background-size: cover;
+        object-fit: cover;
+    }
+    &.is-play{
+        @media screen and (min-width: $breakpointXSM){
+            .site-video-player-player{
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+        .site-video-player-text{
+            opacity: 0;
+            visibility: hidden;
+            overflow: hidden;
+        }
+        .site-video-player-player{
+            a{background:url(#{$baseHref + "/UPLOAD/BANNERS/home-page/video/video-pause-triangle.png"}) no-repeat #fff;}
+        }
+        &:hover{
+            @media screen and (min-width: $breakpointXSM){
+                .site-video-player-player{
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+        }
+        .site-video-player-overload:after{display: none;}
+    }
+}
+
+/*Kampanyalar*/
+.ems-page-grid-layout{
+    padding-top: 20px;
+    padding-bottom: 50px;
+    @include flex();
+    @include flexDirection(column);
+    .ems-page-grid-navigation{
+        order: 2;
+        ul{
+            display: table;
+            border-bottom: 1px solid $Gray;
+            width: 100%;
+            li{
+                display: inline-block;
+                vertical-align: middle;
+                text-align: left;
+                margin-left: 3%;
+                &:first-child{margin-left: 0;}
+                a{
+                    display: inline-block;
+                    padding: 10px 20px 10px 20px;
+                    text-align: center;
+                    position: relative;
+                    font-size: 14px;
+                    font-family: $avenir-medium;
+                    letter-spacing: 1px;
+                    &:hover{
+                        color: $red;
+                    }
+                }
+                &.selected{
+                    a{
+                        border-bottom: 1px solid $red;
+                    margin-bottom: -1px;
+                    }
+                }
+            }
+        }
+    }
+    &-title{
+        position: relative;
+        padding-top:10px;
+        padding-bottom:10px;
+        order: 1;
+        span{
+            display: inline-block;
+            font-size: 14px;
+            text-align: center;
+            font-family: $avenir-bold;
+            color: #000;
+            letter-spacing: 2px;
+            position: relative;
+            z-index: 2;
+            background: #fff;
+        }
+        &:after{
+            content:'';
+            position: absolute;
+            top: 50%;
+            margin-top: -2px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: #e1e1e1;
+            z-index: 1;
+        }
+    }
+    > ul{
+        order: 3;
+        margin-top: 20px;
+        li{
+            .inner{
+                padding: 10px 10px 0 10px;
+                position: relative;
+                overflow: hidden;
+                .cover{
+                    position: relative;
+                    background-size: cover !important;
+                    a {display: block;}
+                    img{opacity: 0; visibility: hidden;}
+                    .discount-icon,
+                    .last-day,
+                    .new-icon{
+                        position: absolute;
+                        width: auto;
+                        height: auto;
+                        z-index: 1;
+                    }
+                    .new-icon,
+                    .discount-icon{
+                        top: 10px;
+                    }
+                    .new-icon{
+                        left: 10px;
+                        background: #fff;
+                        color: #30de86;
+                        font-family: $bold;
+                        text-align: center;
+                        padding: 5px;
+                        min-width: 42px;
+                    }
+                    .discount-icon{
+                        background: $red;
+                        right: 10px;
+                        font-family: $bold;
+                        text-align: center;
+                        color: #fff;
+                        padding: 10px 3px;
+                        min-width: 35px;
+                    }
+                    .last-day{
+                        bottom: 10px;
+                        right: -8px;
+                        background: #000;
+                        color: #fff;
+                        text-align: center;
+                        min-width: 95px;
+                        padding: 7px 2px 8px 2px;
+                        &:after{
+                            content:'';
+                            position: absolute;
+                            top: 0;
+                            right: 0;
+                            background:url(#{$baseHref + "/images/frontend/son-gun-icon.png"}) top right no-repeat;
+                            display: inline-block;
+                            width: 8px;
+                            height: 39px;
+                        }
+                    }
+                }
+                .title,
+                .sub-title{display: block;}
+                .title{font-family: $avenir-medium; font-size: 20px;}
+                .sub-title{font-family: $regular; font-size: 14px; margin-top: 5px; max-height: 40px; line-height: 20px; overflow: hidden;}
+                .buton-link{
+                    .btnAlternate{
+                        max-width: 100%;
+                    }
+                }
+                @media screen and (min-width: $breakpointXSM){
+                    .buton-link{
+                        @include transition(all .2s ease);
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 40px;
+                        z-index: 1;
+                        padding-left: 10px;
+                        padding-right: 10px;
+                        @include setTransform(translateY(40px))
+                    }
+                    &:hover{
+                        .buton-link{
+                            @include setTransform(translateY(0))
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: $breakpointXSM){
+    .ems-container{
+        padding: 0 10px;
+    }
+
+    /*Kampanyalar*/
+    .ems-page-grid-layout{
+        .ems-page-grid-navigation{
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+        &-title{
+            margin-left: 10px;
+            margin-right: 10px;
+            position: relative;
+            padding-top:10px;
+            padding-bottom:10px;
+            margin-bottom: 10px;
+            span{
+                font-size: 18px;
+                text-align: left;
+                padding-right: 30px;
+            }
+            &:after{
+                content:'';
+                position: absolute;
+                top: 50%;
+                margin-top: -2px;
+                left: 0;
+                width: 100%;
+                height: 2px;
+                background: #e1e1e1;
+                z-index: 1;
+            }
+        }
+        > ul{
+            li{
+                width: 25%;
+                display: inline-block;
+                vertical-align: top;
+                margin-bottom: 30px;
+                .inner{ 
+                    .text-line{
+                        margin-top: 10px;
+                        overflow: hidden;
+                        max-height: 67px;
+                    }
+                }
+            }
+        }
+    }
+
+    .ems-page{
+        width: 100%;
+        &-home{
+            padding-top: 30px;
+            padding-bottom: 50px;
+            .order-gray{
+                padding-top: 40px;
+                margin-top: 60px;
+                padding-bottom: 60px;
+            }
+            .ems-container.order-1{
+                @include flex();
+                justify-content: space-between;
+                max-width: 1220px;
+            }
+        }
+        .grid-instagram{
+            > span{
+                display: block;
+                text-align: center;
+                color: #0d2048;
+                &.title{
+                    font-size: 72px;
+                    padding-bottom: 20px;
+                    &:after{
+                        content: '';
+                        width: 100%;
+                        max-width: 96px;
+                        height: 1px;
+                        background-color: #0d2048;
+                        margin: 20px auto 0 auto;
+                        display: block;
+                    }
+                }
+                &.title-small{
+                    font-size: 18px;
+                    padding-bottom: 30px;
+                }
+            }
+        }
+        .grid-layout {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(32%, auto) minmax(14%, auto));
+            grid-gap: 15px;
+            grid-auto-flow: column;
+            width: 100%;
+            max-width: 1440px;
+                margin: 0 auto;
+        }
+        
+        .gird-item img { width:100%; }
+        
+        .grid-item:nth-child(3n+1 ) {
+          grid-row-end: span 2;
+        }
+    }
+    .ems-container-section{
+        max-width: 1240px;
+    }
+    .ems-container-middle{
+        max-width: 1220px;
+        margin: $marginAuto;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .widget-middle{
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 50px;
+        .widget{
+            .swiper-inner{
+                padding-top: 20px;
+            }
+        }
+    }
+
+    .ems-pay-info {
+        max-width: 1240px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        ul{
+            max-width: 1000px;
+            margin: 0 auto;
+            li{
+                .step{
+                    display: table;
+                    width: 100%;
+                    table-layout: fixed;
+                    max-width: 165px;
+                    > div, p{
+                        display: table-cell;
+                        vertical-align: middle;
+                    }
+                    p{padding-left: 5px; padding-right: 5px;}
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $breakpointXSM){
+    .ems-page{
+        overflow-x: hidden;
+        &-home{
+            padding-bottom: 35px;
+        }
+    }
+
+    /*Kampanyalar*/
+    .ems-page-grid-layout{
+        padding-bottom: 30px;
+        padding-top: 0;
+        .ems-page-grid-navigation{
+            order: inherit;
+            span.mobile-element{
+                display: block;
+                background: #f6f6f6;
+                border-width: 1px 0 1px 0;
+                border-color: $Gray;
+                border-style: solid;
+                font-family: $mediumA;
+                color: #6c6c6c;
+                font-size: 14px;
+                padding: 10px 20px 10px 20px;
+                height: 50px;
+                line-height: 30px;
+                position: relative;
+                &:after{
+                    font-family: 'icomoon';
+                    content: "\e900";
+                    line-height: 1;
+                    width: 24px;
+                    height: 24px;
+                    font-size: 12px;
+                    position: absolute;
+                    top: 50%;
+                    right: 15px;
+                    margin-top: -12px;
+                    text-align: center;
+                    line-height: 24px;
+                }
+            }
+            ul{
+                height: 0;
+                overflow: hidden;
+                font-size: 0;
+                border-bottom: none;
+                display: inherit;
+                li{
+                    margin-left: 0;
+                    display: block;
+                    a{
+                        display: block;
+                        text-align: left;
+                        font-family: $regular;
+                        font-size: 14px;
+                        padding-top: 12px;
+                        padding-bottom: 12px;
+                    }
+                    &.selected{
+                        a{
+                            border-bottom: none;
+                            color: $red;
+                        }
+                    }
+                }
+            }
+            &.opened{
+                span.mobile-element{
+                    &:after{
+                        @include setTransform(rotateX(180deg));
+                    }
+                }
+                ul{
+                    height: auto;
+                    overflow: visible;
+                    font-size: inherit;
+                }
+            }
+        }
+        &-title{
+            order: inherit;
+            text-align: center;
+            margin-top: 20px;
+            span{
+                padding-left: 50px;
+                padding-right: 50px;
+            }
+        }
+        > ul{
+            padding-left: 35px;
+            padding-right: 35px;
+            li{
+                margin-bottom: 20px;
+                .inner{
+                    .cover{
+                        height: 285px;
+                    }
+                    .text-line{
+                        padding-top: 15px;
+                    }
+                    .buton-link{
+                        .btnAlternate{
+                            border: none;
+                            text-align: left;
+                            padding-left: 0;
+                            span{
+                                font-family: $regular;
+                                font-size: 14px;
+                                text-decoration: underline;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .ems-pay-info {
+        padding-top: 25px;
+        padding-bottom: 25px;
+        max-width: 100%;
+        ul {
+            li{
+                display: inline-block;
+                vertical-align: top;
+                width: 50%;
+                &:nth-child(1),
+                &:nth-child(2){
+                    margin-bottom: 20px;
+                }
+                .step{
+                    text-align: center;
+                    p{display: block;}
+                }
+            }
+        }
+    }
+    .site-video-player{
+        display: none;    
+        &-player {
+            width: 45px;
+            height: 45px;
+            margin-top: -22px;
+            a{
+                width: 45px;
+                height: 45px; 
+                background-position: 18px 15px !important;
+                background-size: 13.5px 17.5px !important;
+            }
+        }
+        &-text{display: none;}
+    }
+    .ems-mobile-banners{
+        ul{
+            margin-top: 30px;
+            li{
+                &:first-child{margin-top: 0;}
+                margin-top: 10px;
+                > a{
+                    position: relative;
+                    display: block;
+                    .cover{
+                        height: 180px;
+                        background-size: cover !important;
+                        background-position: top left !important;
+                    }
+                    .text{
+                        position: absolute;
+                        bottom: 20px;
+                        left: 20px;
+                        z-index: 1;
+                        width: 50%;
+                        div{
+                            .new{
+                                display: inline-block;
+                                background: #fff;
+                                font-family: $bold;
+                                color: #30de86;
+                                font-size: 14px;
+                                min-width: 45px;
+                                height: 26px;
+                                line-height: 26px;
+                                text-align: center;
+                            }
+                        }
+                        .tt1{
+                            span{
+                                font-size: 25px;
+                                font-family: $avenir-bold;
+                                color: #fff;
+                                display: inline-block;
+                                margin-top: 10px;
+                            }
+                        }
+                        .btn{
+                            span{
+                                font-family: $mediumA;
+                                font-size: 16px;
+                                color: #fff;
+                                display: inline-block;
+                                text-decoration: underline;
+                                margin-top: 10px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

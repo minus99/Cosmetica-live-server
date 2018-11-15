@@ -1,0 +1,4170 @@
+.tabloTabBtnAdimSiparis { 
+    display: table;
+    width: auto;
+    td{ 
+        display: table;
+        table-layout: fixed;
+    }
+    td > span {
+        text-align: center;
+        position: relative;
+        display: table-cell;
+        vertical-align: middle; 
+        padding: 0 18px;
+        a {
+            display: block;
+            padding-top: 25px;
+            padding-bottom: 15px;
+            padding:20px 22px 15px 22px; 
+            position: relative;
+            &:after{
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 3px;
+                background: none;
+            }
+            span {
+                display: block;
+                strong {
+                    display: block;
+                    font-size: 14px;
+                    font-weight: normal;
+                    font-family: $avenir-bold;
+                    padding-top: 10px;
+                    position: relative;
+                    &:before {
+                        content:'\e92e';
+                        font-family: 'icomoon';
+                        color: $red;
+                        display: none;
+                        position: absolute;
+                        margin-left: -20px;
+                    }
+                }
+            }
+        }
+        &.tabBtnSelectedDefault {
+            a {
+                strong {
+                    font-family: $avenir-bold;
+                }
+                &:after{background: $red;}
+            }
+        }
+        &.tabBtnAdimSepet, &.tabBtnAdimTeslimat {
+            strong {
+                &:before {
+                    display: inline-block;
+                }
+            }
+        }
+        &.btnDisable {
+            strong {
+                font-family: $regularA;
+                color: $dGray;
+                &:before {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+.ems-cart-ntf{
+    &-wrapper{
+        .kargoBilgi{
+            font-size: 14px;
+            position: relative;
+            background: #d1f5fa;
+            padding: 25px 30px 25px 30px;
+            .kargoBilgiIcon{
+                width:22px;
+                height:22px;
+                display: block;
+                margin: 0 auto 10px auto;
+                i, i:before{
+                    font-size: 22px;
+                }
+                i:before{
+                    color:$lDark;
+                }
+                small{display: none;}
+            }
+        }
+    }
+}
+
+/*Sepet ozel urun*/
+.ems-cart-ntf {
+    margin-top:20px;
+    &-message{
+        background: $red;
+        border-radius: 10px;
+        &-inline{
+            padding: 20px 20px 15px 20px;
+            margin-bottom: 20px;
+            > span { 
+                font-family: $mediumA; 
+                color: #ffffff; 
+                line-height: 30px; 
+                display: block; 
+            }
+        }
+    }
+    &-header{
+        position: relative;
+        margin-bottom: 20px;
+    }
+    &-footer { display: none; }
+    &-body{
+        width: 100%;
+    }
+    &-warning{
+        display: inline-block;
+        padding-left: 15px;
+        .ntf-wrp{
+            position: relative;
+            display: inline-block;
+                i.icon-ico_bell{
+                display: inline-block;
+                vertical-align: middle;
+                font-size: 23px;
+                animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+                transform: translate3d(0, 0, 0);
+                backface-visibility: hidden;
+                perspective: 1000px;
+                animation-delay: 10s;
+                animation-duration: 6s; 
+                animation-iteration-count: infinite;
+                animation-fill-mode: forwards;
+                &:before{
+                    color: $red;
+                    font-size: 23px;
+                }
+            }
+            b{
+                position: absolute;
+                top: -6px;
+                right: -2px;
+                border-radius: 100%;
+                width: 16px;
+                height: 16px;
+                font-weight: normal;
+                background: #ffffff;
+                padding: 2px;
+                line-height: 15px;
+                i{
+                    font-weight: normal;
+                    text-align: center;
+                    background: $red;
+                    color: #ffffff;
+                    font-size: 11px;
+                    font-family: $mediumA;
+                    border-radius: 100%;
+                    width: 13px;
+                    height: 13px;
+                    display: inline-block;
+                }
+            }
+        }
+        span{ font-size:18px; color:$red; font-family:$mediumA; display:inline-block; vertical-align:middle; margin-left:10px; }
+    }
+    &-close{
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: inline-block;
+        padding: 6px 0;
+        span{ font-family:$mediumA; color:$Blue; font-size:12px; }
+    }
+    .ems-grid-ntf{
+        @include transition(all 0.2s ease);
+        margin-bottom: 20px;
+        .ems-grid-header{
+            text-align: left;
+            background: $red;
+            padding: 10px 17px;
+            margin-top: 20px;
+            > span{ font-family: $bold; color: #ffffff; font-size: 18px; }
+        }
+        .ems-grid-row{
+            border-color:$red;
+            border:none;
+            display: table;
+            width: 100%;
+            table-layout: fixed;
+            padding: 20px;
+            > div { 
+                border:none;
+                display: table-cell;
+                position: relative;
+                vertical-align: middle;
+                word-break: break-word;
+            }
+            border-width: 0 2px 2px 2px;
+            border-style: solid;
+            border-color: $red;
+            .ems-grid-img{
+                width: 20%;
+                img { max-width: 90px; }
+                > div {
+                   a {
+                       display: inline-block;
+                   } 
+                }
+            }
+            .ems-grid-name{
+                width: 50%;
+                padding-right: 20px;
+                > a {
+                    display: block; 
+                    span.prdItem-mrkad {
+                        color: $light;
+                        margin-bottom: 10px;
+                        display: block;
+                    }
+                    span.prdItem {
+                        font-weight: bold;
+                        display: block; 
+                    }
+                    span.prdItem {
+                        font-weight: bold;
+                        display: block; 
+                    }
+                }
+                .ems-grid-price, .ems-grid-price-total {
+                    display: inline-block;
+                    width: auto;
+                    padding-left: 0 !important;
+                }
+                .ems-grid-price {
+                    padding-right: 10px;
+                    text-decoration: line-through;
+                    &:before{
+                        font-family:$tl;
+                        content:"t";
+                        font-size:24px;
+                        font-size: calc(11px + 0.5vw);
+                        padding-right: 3px;
+                        display: inline-block;
+                    }
+                        font-family: $mediumA;
+                        font-size: 24px;
+                        font-size: calc(14px + 0.5vw);
+                    span {
+                        font-family: $mediumA;
+                        font-size: 24px;
+                        font-size: calc(14px + 0.5vw);
+                    } 
+                }
+                .ems-grid-price-total{ 
+                    font-family: $mediumA;
+                    color:$red;
+                    font-size: 30px;
+                    font-size: calc(15px + 0.5vw);
+                    span{
+                        font-family: $bold;
+                        color:$red;
+                        font-size: 30px;
+                        font-size: calc(15px + 0.5vw);
+                    }
+                    .d {
+                        font-size: 14px; 
+                        position: relative;
+                        top: 3px; 
+                        vertical-align: super;
+                    }
+                }
+            }
+            .ems-grid-cart-addBtn{
+                width: 30%; 
+                padding-left: 0px;
+                a.btnDefault {
+                    width: 100%;
+                    padding-top: 12px;
+                    padding-bottom: 10px;
+                    border:1px solid $light;
+                    span{ font-size: 12px; }
+                    &:hover{
+                        background: $red;
+                        border-color: $red;
+                        span {
+                            color: #fff;
+                        }
+                    }
+                }
+                .ems-grid-price {
+                    text-align: right;
+                    font-size: 14px;
+                    color: $light; 
+                    padding: 0 0 10px 0; 
+                    &:before { 
+                        font-family: "tl";
+                        content: 't';
+                        font-size: 13px; 
+                        position: relative;
+                        top: 0px;
+                        right: 3px;
+                        padding-right: 1px;
+                    }
+                }
+                .total-gain{
+                    text-align: right;
+                    margin-bottom: 5px;
+                    > span {
+                        display: inline-block; 
+                        &:before {
+                            font-family: "tl";
+                            content: 't';
+                            font-size: 13px; 
+                            position: relative; 
+                            top: 0px;
+                            right: 3px;
+                            padding-right: 1px;
+                        }
+                    }
+                    .text { font-size:12px; font-family:$mediumA; }
+                    .total{
+                        font-size: 16px;
+                        font-family: $bold;
+                        i:before{ font-family:$tl; content:"t"; font-size:14px; }
+                    }
+                }
+            }
+        }
+        &.active{
+            height: auto;
+            opacity: 1;
+            overflow: visible;
+        }
+    }
+    &.no-campaing {
+        display: none !important;  
+        .ems-cart-ntf-message {display: none !important;}
+    }
+}
+
+.sepet-iade-degisim-pp{
+    .col-md-offset-1.sepet-iade-degisim-pp{
+        max-width: 680px !important;
+        .iade-degisim-pp{
+            padding: 30px 50px;
+        }
+    }
+}
+
+.ems-cart-warning-wrapper {
+    display: block !important;
+    margin: 30px 0;
+    > ul {
+        display: flex;
+        align-items: stretch;
+    }
+    .swiper-pagination {display:none;}
+}
+
+.ems-cart-warning-1{
+    background: #f0f0f0;
+    padding: 15px;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    flex: 1 1 auto;
+    margin: 0 10px;
+    align-items: center;
+    display: flex;
+    height: auto;
+    &:nth-child(2){cursor: pointer;}
+    .inner{
+        > div{
+            display: table-cell;
+            vertical-align: middle;
+        } 
+        .text{
+            padding-left:40px;
+            > span{display: block;}
+            .title{font-family:$regular; font-size:14px; color: $red; font-weight: bold;}
+            .title-1{font-family:$regular; font-size:14px; color: #000; padding-top: 10px;}
+            b {
+                    &:before {
+                    font-family: "tl";
+                    content: 't';
+                    font-size: 14px;
+                    position: relative;
+                    top: 0px;
+                    right: 2px;
+                    padding-right: 1px;
+                }
+            }
+        } 
+        .icon{
+            width: 35px;
+            height: 35px;
+            text-align: center;
+            i, i:before{
+                font-size: 50px;
+                color: #28354f;
+            }
+        }
+    }
+    &.specPrd {
+        position: relative;
+        img {
+            height:70px;
+            float: left;
+        }
+        .prdLabel {
+            position: absolute;
+            right: -8px;
+            top: 15px;
+            span {
+                background: $red;
+                padding: 7px 10px;;
+                color: #fff;
+            }
+            .labelBorder {
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-width: 8px 8px 0 0;
+                border-color: #b1095a transparent transparent transparent;
+                position: absolute;
+                right: 0;
+                top: 22px;
+            }
+        }
+        .mainPrdContent {
+            margin-left: 80px;
+            margin-right: 70px;
+            .topCont {
+                span {
+                    display: block;
+                    &.brandName {
+                        color: #6c6c6c;
+                        margin-bottom: 5px;
+                    }
+                    &.campTitle {
+                        margin-bottom:5px;
+                    }
+                }
+            }
+            .bottomCont {
+                i {
+                    font-size: 16px;
+                    font-family: $bold;
+                    overflow: hidden;
+                    text-indent: 2px;
+                    display: inline-block;
+                    margin-right: -20px;
+                    width: 65px;
+                    height: 18px;
+                    text-align: right;
+                    &:before {
+                        font-family: "tl";
+                        content: 't';
+                        font-size: 14px;
+                        position: relative;
+                        top: 0px;
+                        right: 2px;
+                        padding-right: 1px;
+                    }
+                    &.campDiscount {
+                        margin-right: 10px;
+                        color: #9f9f9f;
+                        text-decoration: line-through;
+                        font-family: $mediumA;
+                    }
+                }
+            }
+            .addBasket {
+                position: absolute;
+                right: 15px;
+                bottom: 15px;
+                .btn-cart-btn {
+                    font-family: $bold;
+                    padding: 7px 12px;
+                    font-size: 13px;
+                    border: 1px solid #979797;
+                    display: inline-block;
+                    &:hover {
+                        background:$btnAlternateColor;
+                        border-color: $btnAlternateColor;
+                        color:#fff;
+                    }
+                }
+            }
+        }
+    }
+    &.ems-hidden {display:none; min-width: 0px !important; width: 0;}
+}
+
+.ems-cart-layout {
+    .site-discount-banner {
+        display: none;  
+    }
+}
+
+@media screen and (min-width: $breakpointXSM){
+    .ems-cart-layout{
+        .site-header{
+            width: 0;
+            height: 0;
+            min-height: 0;
+            font-size: 0;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+            &-wrapper{position: inherit; z-index: inherit; top: inherit;}
+        }
+        .site-footer{
+            width: 0;
+            height: 0;
+            min-height: 0;
+            font-size: 0;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+            .kutuBulten{display: none;}
+        }
+        .vailLogin{display:none !important;}
+    }
+
+    .ems-cart-layout-success{
+        .mod-mini-login-body{
+            top: 55px;
+            height: calc(100vh - 55px);
+        }
+    }
+
+    .page-cart-empty-layout{
+        .swiper-container-payment {
+            .swiper-wrapper{justify-content:center;}
+        }
+        .widget-pagecart{display: none;}
+    }
+
+    .ems-page-cart {
+        margin: 0 auto;
+        position: relative;
+        &-colmn-1{
+            min-height: 300px;
+            width: calc(100% - 360px); 
+            float: left; 
+            &-top{
+                @include flex();
+                @include flexDirection();
+                align-items: center;
+                max-width: 1440px; 
+                padding: 0 20px;
+                margin: 0 auto;
+            }
+        }
+        &-colmn-2{
+            float: right;
+            position: relative;
+            max-width: 360px;
+            width: 100%;
+        }
+        &-logo{
+            width: 157px;
+        }
+        div[id$="pnlSiparisBaslik"]{width: calc(100% - 100px);}
+
+        .ems-page-order-cart,
+        .ems-page-default-order-delivery{
+            padding: 0;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .ems-page-default {
+            .ems-grid-default-cart.obj-step0 {
+                border-bottom:1px solid $Gray;
+            }
+        }
+        
+        .cart-section-right {
+            .ems-cart-summary{
+                position: relative;
+                padding:45px 35px 20px 35px;
+                .next{
+                    .btnSiparisOnay{
+                        &:last-child{margin-top: 20px;}
+                    }
+                }
+                table {
+                    padding: 0 20px;
+                    display: flex;
+                }
+            }
+        }
+        &.empty-layout{
+            .ems-page-cart-colmn-2 {display: none;}
+            .ems-page-cart-colmn-1{
+                width: 100%;
+                float: none;
+                border-right: none;
+            }
+        }
+        .ems-page-cart-row-1 {
+            width:100%;
+            border-bottom:1px solid $red;
+        }
+        .ems-page-cart-row-2 {
+            width:100%;
+            max-width: 1100px;
+            display: flex;
+            padding: 0 20px;
+            margin: 0 auto;
+        }
+        .ems-page-cart-row-3 {
+            width: 100%;
+            &.basketWidget {
+                margin-bottom: 30px;
+                .swiper-pagination { 
+                    padding-top: 50px;
+                }
+
+            }
+            .width-1240 {
+                max-width: 1240px;
+                width: 100%;
+                margin: 0 auto;
+            }
+            .width-1200 {
+                max-width: 1200px;
+                width: 98%;
+                margin: 0 auto;
+                margin-top: 50px;
+            }
+            .ems-page-cart-colmn-1-middle {
+                max-width: 1240px;
+                width: 100%;
+                margin: 0 auto;
+            }
+        }
+    }
+}
+.cart-userControl {
+    display: flex;
+}
+.cart-member-menu{
+    position: relative;
+    &-header{
+        cursor: pointer;
+        .login-title{
+            a{
+                display: inline-block;
+                padding: 16px 15px 14px 30px;
+                position: relative;
+                white-space: nowrap;
+                &:before{
+                    font-family:'icomoon';
+                    content: '\e92b';
+                    width: 18px;
+                    height: 18px;
+                    font-size: 18px;
+                    position: absolute;
+                    left: 0;
+                    top: 50%;
+                    margin-top: -9px;
+                }
+            }
+        }
+        .logoff-title{
+            span{
+                display: inline-block;
+                padding: 16px 20px 15px 30px;
+                position: relative;
+                overflow: hidden !important;
+                text-overflow: ellipsis;
+                max-width: 160px;
+                min-width: 120px;
+                width: 100%;
+                white-space: nowrap;
+                &:before{
+                    font-family:'icomoon';
+                    content: '\e92b';
+                    width: 18px;
+                    height: 18px;
+                    font-size: 18px;
+                    position: absolute;
+                    left: 0;
+                    top: 50%;
+                    margin-top: -9px;
+                }
+            }
+        }
+    }
+    ul{
+        display: none;
+        position: absolute;
+        top: 46px;
+        left: 0;
+        width: 100%;
+        height: auto;
+        background: #fff;
+        padding: 5px;
+        z-index: 2;
+        -webkit-box-shadow: 1px 5px 10px 4px rgba(0, 0, 0, 0.1);
+        box-shadow: 1px 5px 10px 4px rgba(0, 0, 0, 0.1);
+        li{
+            a{
+                display: block;
+                padding:8px 5px;
+                &:hover{color: $btnColor;}
+            }
+        }
+    }
+    &.opened{
+        ul{
+            display: block;
+        }
+    }
+}
+
+.cart-mini-basket {
+    float: right;
+    width: 100px;
+    .mod-mini-cart-header {
+        .ems-cart-info {
+            background: none;
+            span[id$="lbfKUTU_SEPET"] {
+                white-space: nowrap;
+                > span {
+                    color: #000;
+                }
+                .icon-ico_basket:before {
+                    color: #000;
+                }
+            }
+            span[id$="lblUrunAdet"] {
+                width: 16px;
+                height: 16px;
+                top: 7px;
+                left: 20px;
+                right: auto;
+                background: $red;
+                padding: 0;
+                line-height: 17px;
+                color: #fff;
+            }
+            &:before {
+                display: none;
+            }
+        }
+    }
+}
+
+.ems-logoff {
+    .cart-member-menu{
+        .logoff-title{display: none;}
+    }   
+}
+.ems-login {
+    .cart-member-menu{
+        .login-title{display: none;}
+    }   
+}
+
+.page-cart-empty-layout{
+
+    .ems-page-cart .cart-section-left,
+    .ems-page-cart .cart-section-right,
+    .site-footer,
+    .ems-cart-warning-1{display:none;}
+
+    .ems-page-cart-colmn-1{width: 100%; border-right: none; float: none;}
+    .ems-page-cart .ems-pay-info{margin-top: 0;}
+    .ems-page-cart-colmn-1{min-height: auto;}
+    .ems-page-cart .ems-page-order-cart{ width:100%; max-width:100%; padding:0; display:table; }
+    .ems-page-order-cart span[id$="lbfSPT_SEPETBOS"]:empty{display: none;}
+    .ems-page-order-cart span[id$="lbfSPT_SEPETBOS"] {display:table-cell; vertical-align:middle; height: calc(100vh - 190px);}
+
+    .ems-pay-info .ems-container{padding: 0; max-width: 100%; padding: 0;}
+    .ems-pay-info{position: fixed; max-width: 100%; bottom: 0; left:0; width:100%; margin-top: 0; }
+
+    .ems-page-cart-step0 .ems-pay-info{display: block;}
+}
+
+.basket-empty {
+    .ems-page-cart {
+        .ems-page-cart-row-2 {
+            display: block;
+        }
+    }
+    .ems-page-cart .ems-page-cart-row-3 {display: none;}
+}
+
+.ems-page-cart {
+
+    .ems-pay-info{padding-top: 40px; padding-bottom:40px; margin-top: 40px;}
+    .ems-pay-info .ems-container{padding: 0; max-width: 800px;}
+    .ems-pay-info .swiper-slide .step span{max-width: 60%;}
+    .ems-pay-info .swiper-slide{width: 33.333%;}
+    .ems-cart-count{display: none; margin-bottom: 30px;}
+
+    &-step1{
+        .ems-cart-count{display: block;}
+        .ems-cart-ntf{display: none;}
+    }
+
+    .no-prd {
+        text-align: center;
+        width: 100%;
+        max-width: 480px;
+        margin: 0 auto;
+        padding: 20px 0;
+        height: 200px;
+        @media screen and (min-width: 850px){
+            margin-top: 50px;
+        }
+        img {
+            float: left;
+            margin-right: 25px;
+        }
+        .no-prd-header{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 30px 0 29px 0;
+            border-bottom:1px solid $border;
+            background: #fff;
+            display: none;
+        }
+        .icon-bag {
+            width: 65px;
+            height: 65px;
+            margin-left: auto;
+            margin-right: auto;
+            i{
+                line-height: 65px;
+                display: block;
+            }
+            i, i:before {
+                font-size: 65px;
+            }
+        }
+        p {
+            font-size: 17px;
+            letter-spacing: 1.3px; 
+            color: #ee0676;
+            font-family: $avenir-medium;  
+            display: block;
+            margin: 20px 0 10px 0;
+            text-align: left;
+        }
+        span {
+            display: block;
+            margin: 0px 0 20px 0;
+            text-align: left;
+            color: $light;
+            line-height: 1.64;
+        }
+        .g-home{
+            max-width: 200px;
+            border: 1px solid #000000;
+            float: left;
+            &:hover{
+                background: $btnAlternateColor;
+                color: #fff;
+                border-color: $btnAlternateColor;
+            }
+        }
+    }
+
+    &-colmn-2{
+        .ems-element-copy {
+            display: block;
+        }
+        @media screen and (min-width: $breakpointXSM){
+            .ems-element-copy-cargo-notify{
+                padding-left: 35px;
+                padding-right: 35px;
+            }
+        }
+    }
+
+    .cart-section-left {
+        .page-top-title {
+            span{
+                font-family: $mediumA;
+                font-size: 36px;
+                display: block;
+                padding-bottom: 10px;
+            }
+        }
+        .ems-grid-default {
+            .ems-grid-header { display: none; }
+            .ems-grid-row {
+                display: table;
+                table-layout: fixed;
+                width: 100%;
+                background: #fff;
+                position: relative;
+                padding-top: 0px;
+                padding-bottom: 20px;
+                &:last-child{border-bottom:none;}
+                > div {
+                    display: table-cell;
+                    vertical-align: middle;   
+                }
+                .ems-grid-content{
+                    width: 90%;
+                    padding-left: 20px;
+                    padding-right: 25px;
+                }
+                .ems-grid-content-inner{
+                    @include flex();
+                    @include flexDirection(column);
+                    position: relative;
+                }
+                .ems-grid-img {
+                    width: 80px;                    
+                    text-align: center;
+                    a {display: inline-block;}
+                }
+                .ems-grid-name {
+                    order: 2;
+                    > span, > br{
+                        display: none;
+                    }
+                    span[id$="lblProm"]{
+                        display: table;
+                        ul{
+                            li{
+                                font-family:$regular;
+                                font-size: 12px;
+                                color: #ff5f73;
+                                padding-top: 5px;
+                                .d {
+                                    font-size: 12px !important;
+                                }
+                            }
+                        }
+                    }
+                    a {
+                        &.prdItem {font-family:$regular; font-size:18px;}
+                        &.urnKisaAd {display:none;} 
+                    }
+                    .ems-grid-code{display: none;}
+                }
+                .ems-grid-brandName {
+                    color: $light;
+                    margin-bottom: 8px;
+                }
+                .ems-grid-code {
+                    a {
+                        font-size: 13px;
+                        font-family: $regular;
+                        color: $Gray;
+                        margin-top: 5px;
+                        display: block;
+                    }
+                }
+                .ems-grid-piece {
+                    order: 3;
+                    text-align: center;
+                    span[id$="lblSCD_AD1"]{
+                        font-family: $regular;
+                        text-align: left;
+                        color: $dGray;
+                        &:before{
+                            content:'Beden';
+                            font-family: $regular;
+                            font-size: 14px;
+                        }
+                        &:empty{display:none;}
+                    }
+                    .sStylerMainWrp.sStylerWrp_select, select {
+                        display: none !important;
+                    }
+                    span[id$="lbfUrunAdetEkleCikar"] {display: none;}
+                    .sStylerMainWrp.sStylerWrp_select{
+                        width: auto;
+                        min-width: 110px;
+                        display: none;
+                        .sStylerWrp{
+                            border-width: 0 1px 0 1px;
+                            border-style: solid;
+                            border-color: #28354f;
+                            height: 20px;
+                            line-height: 10px;
+                            width: 100%;
+                            max-width: 110px;
+                            font-family: $regular;
+                            color: #28354f;
+                            padding: 5px 10px;
+                            &:after{
+                                width: 20px;
+                                height: 20px;
+                                font-size: 10px;
+                                margin-top: -10px;
+                                line-height: 20px;
+                                color: #28354f;
+                                right: 10px;
+                            }
+                        }
+                        select { 
+                            option{
+                                font-size: 14px;
+                                font-family: $regular;
+                                color: #28354f;
+                            }
+                        }
+                    }
+                    input {
+                        border: 0;
+                        font-family: $mediumAA;
+                        padding: 0px;
+                        text-align: center;
+                    }
+                    a{
+                        padding: 5px;
+                        i {
+                            &:before {
+                                font-size: 11px;
+                                font-weight: bold;
+                            }
+                        }
+                    }
+                }
+                .ems-grid-price-total {
+                    order: 1;
+                    text-align: center;
+                    span [id$="lblURN_TOPLAMFIYAT"]{
+                        text-decoration: none !important;
+                    }
+                    font {
+                        text-align: center;
+                        display: none;
+                        &.topFiyat {display: none !important;}
+                        &.brutFiyat{display: none !important;}
+                        &.netFiyat{
+                            display: none !important;
+                            font-family: $mediumA;
+                            font-size: 16px;
+                            color:#28354f;
+                            font-family: $bold;
+                        }
+                        &.brutFiyatVrg {
+                            text-decoration: line-through;
+                            font-family: $regular;
+                            font-size: 14px;
+                            color: #a2a5ac;
+                            &.ems-hidden {
+                                display: none !important;
+                            }
+                        }
+                        &.netFiyatVrg{
+                            font-family: $mediumA;
+                            font-size: 16px;
+                            color:#28354f;
+                            font-family: $bold;
+                        }
+                        &.netFiyatVrg, &.brutFiyatVrg {
+                            display:block !important;
+                            vertical-align: middle;
+                            white-space: nowrap;
+                            .d {
+                                font-size: 12px;
+                            }
+                        }
+                        &.satBrFiyat {
+                            font-family: $bold;
+                        }
+                        &.brFiyat {
+                            color: $light;
+                            text-decoration: line-through;
+                            margin-bottom: 5px;
+                        }
+                        &:before {
+                            font-family: "tl";
+                            content: 't';
+                            font-size: 13px; 
+                            position: relative;
+                            top: 0px;
+                            right: 0px;
+                            padding-right: 1px;
+                        }
+                    }
+                    .discountRatio {
+                        font-family: $mediumA;
+                        font-size: 14px;
+                        padding: 10px 5px;
+                        font-family: $bold; 
+                        background: $red;
+                        color: #fff;
+                        margin-right: 5px;
+                        display: inline-block;
+                    }
+                    .basket-prc-wrp {
+                        display: inline-block;
+                        position: relative;
+                        top: 8px;
+                    }
+                }
+                .ems-grid-delete {
+                    order: 5;
+                    width: 24px;
+                    height: 25px;
+                    z-index: 1;
+                    a{
+                        display: block;
+                        text-align: center;
+                        span{
+                            i{line-height: 24px;}
+                            i, i:before{
+                                font-size: 12px;
+                            }
+                            i:before{
+                                color:#979797;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .ems-cart-button{
+            .ems-cart-btn{
+                display: table;
+                width: 100%;
+                .btnDefault{
+                    width: auto;
+                    background: none;
+                    span{
+                        @include transition(all 0.2s ease);
+                    }
+                    &:hover{
+                        background: none;
+                        span{
+                            color: $red; 
+                        }    
+                    }
+                }
+                .btnAlisverisDevam{
+                    padding-left: 40px;
+                    padding-top: 10px;
+                    padding-bottom: 10px;
+                    margin-top: 10px;
+                    margin-bottom: 10px;
+                    border: 0;
+                    span{
+                        color: $lDark;
+                        font-family: $regular;
+                        i{
+                            position: absolute;
+                            width: 30px;
+                            height: 30px;
+                            line-height: 30px;
+                            left: 0;
+                            top: 50%;
+                            margin-top: -15px;
+                            &:before{
+                                @include transition(all 0.2s ease);
+                            }
+                        }
+                        i, i:before{
+                            font-size: 23px;
+                            color: $lDark;
+                        }
+                    }
+                    @media screen and (min-width: $breakpointXSM){
+                        &:hover{
+                            span{
+                                color: $red;
+                                i{opacity: 1;}
+                                i:before{
+                                    color: $red;
+                                }
+                            }
+                        }   
+                    }
+                }
+                .btnSepetBosalt,
+                .btnSepetGuncelle{
+                    display: none;
+                }
+            }
+        }
+        .pageErrorStokKontrol{
+            > span{
+                &:empty{display: none;}
+                display: block;
+                margin-bottom: 20px;
+                padding: 15px;
+                border: 1px solid $gold;
+            }
+        }
+        .gridSepetStok{
+            border: 1px solid $red;
+            &:empty{display: none;}
+            margin-bottom: 20px;
+            tbody{
+                display: table;
+                width: 100%;
+                table-layout: fixed;
+                tr.gridHeaderSepetStok{display:none;}
+                
+                tr.gridRowSepetStok,
+                tr.gridAlternateSepetStok{
+                    display: table;
+                    width: 100%;
+                    table-layout: fixed;    
+                    background: #fff;
+                    td{text-align:center !important; display: table-cell; vertical-align: middle;}
+                    td:nth-child(1){width: 100px !important; text-align: left !important;}
+                    td:nth-child(1) img{width:100px;}
+                    td:nth-child(2){width:15% !important;}
+                    td:nth-child(3){width:35% !important;}
+                    td:nth-child(4){width:10% !important;}
+                    td:nth-child(5){width:10% !important;}
+                }
+                tr.gridAlternateSepetStok{border-bottom:none !important;}
+            }
+        }
+    }
+    
+    .cart-section-right {
+        .ems-cart-summary {
+            > span{
+                .ems-cart-summary-title{
+                    display: block;
+                    text-align: left;
+                    font-family: $mediumA;
+                    font-size: 36px;
+                    padding-bottom: 40px;
+                }
+            }
+            .pnlDipToplamTable {
+                tr {
+                    margin-bottom:20px; 
+                    display: table;
+                    &.pnlDipToplam_kargoHaricToplam,
+                    &.pnlDipToplam_kdvToplam,
+                    &.pnlDipToplam_kulBankaBonus,
+                    &.pnlDipToplam_bankaKomisyon{display:none;}
+                }
+                td {
+                    > span {
+                        &:before {
+                            font-family: "tl";
+                            content: 't';
+                            font-size: 13px; 
+                            position: relative;
+                            top: 0px;
+                            right: 3px;
+                            padding-right: 1px;
+                        }
+                    }
+                }
+                th, td {
+                    display: table-cell;
+                    vertical-align: middle;
+                    font-weight: normal;
+                }
+                th { 
+                    text-align: left;
+                    span{font-family: $regular; font-size: 14px;}
+                }
+                td{
+                    span{font-family: $bold !important; font-size: 14px;}
+                }
+                tr.pnlDipToplam_sipToplam{
+                    margin-bottom: 25px;
+                    th, td{
+                        span{
+                            font-size: 14px;
+                            font-family: $regular;
+                        }
+                    }
+                }
+            }
+             &-coupon {                 
+                 > span { 
+                     padding-top: 20px;
+                     padding-bottom: 20px;
+                     display: block; 
+                     font-family: $regular; 
+                     font-size: 14px;                     
+                     color: #6c6c6c;
+                     border-top:1px solid $border;
+                     text-align: left;
+                     cursor: pointer;
+                     @include transition(all 0.2s ease);
+                     &:hover{
+                         color: $red;
+                     }
+                     i {font-size: 10px; font-weight: bold; margin-right: 15px;}
+                }
+                &-body { 
+                    display: none; 
+                    position: relative; 
+                    input { 
+                        width: 100% !important; 
+                        padding-right: 45px;
+                    }
+                    table { 
+                        position: absolute; 
+                        right: 4px; 
+                        top: 4px; 
+                        font-family: $regular; 
+                        font-size: 15px;
+                        width: auto;
+                        padding: 0;
+                        a.btnHediyeCekiKullan { 
+                            display: block; 
+                            padding: 9px; 
+                            line-height: 1; 
+                            font-family: inherit; 
+                            font-size: inherit; 
+                            color: $inputborder; 
+                            border: 0;
+                            background: $Gray; 
+                            i, i:before {  
+                                font-size: 14px; 
+                                color: $lDark;
+                                position: relative;
+                                left: 1px;
+                            }
+                            i:before{
+                                color: $lDark;
+                            }
+                            &:hover {
+                                background: $dGray;
+                                i {
+                                    &:before {
+                                        color: #fff;
+                                    }
+                                }
+                            }
+                        } 
+                    }
+                    .ems-message { 
+                        margin-top: 5px; 
+                    }
+                    span[id$="lblHCK_HATA"] {
+                        &:empty{display: none;}
+                        margin-top: 10px;
+                        color: $btnColor;
+                        font-size: 13px;
+                        display: block;
+                        text-align: left;
+                        line-height: 20px;
+                    }
+                }
+                &.opened {
+                    .ems-cart-summary-coupon-body {
+                        display: block;
+                        margin-bottom: 20px;
+                    }
+                }  
+
+            }
+            .ems-cart-summarybottom {
+                a {
+                    border: 0;
+                    color: #fff;
+                    font-family: $avenir-bold;
+                    padding: 15px 10px;
+                } 
+            }
+            .next {
+                a {
+                    border: 0;
+                    color: #fff;
+                    background:$btnAlternateColor;
+                    font-family: $avenir-bold;
+                    padding: 15px 10px;
+                    &:hover {
+                        background: #380FBF;
+                    }
+                }
+            }
+            .ems-cart-alternate{
+                .ems-grid-default{
+                    margin-top: 40px;
+                    .ems-grid-header{
+                        span{
+                            display: block;
+                            font-family: $mediumA;
+                            font-size: 14px;
+                            letter-spacing: 2px;
+                            padding-bottom: 10px;
+                        }
+                    }
+                    .ems-grid-row{
+                        width: 100%;
+                        display: table;
+                        table-layout: fixed;
+                        background: #ecedee;
+                        > div{
+                            display: table-cell;
+                            vertical-align: middle;
+                        }
+                        .ems-grid-img{
+                            width: 65px;
+                        }
+                        .ems-grid-name{
+                            width: auto;
+                            padding-left: 20px;
+                        }
+                        .ems-grid-price-wrapper{
+                            margin-top: 5px;
+                            > div{
+                                display: inline-block;
+                                vertical-align: middle;
+                                font-size: 16px;
+                                &.ems-grid-price{font-family: $mediumA; font-size: 16px; color: #3f434f; margin-right: 10px;}
+                                &.ems-grid-price-total{font-family: $regular; color: #87888e;}
+                            }
+                        }
+                        .ems-grid-cart-addBtn{
+                            padding-right: 20px;
+                            width: 100px;
+                            .btnCartAddBtn{
+                                background: #3f434f;
+                                padding-top: 13px;
+                                padding-bottom: 13px;
+                                span, i{display: inline-block; vertical-align: middle;}
+                                i, i:before{
+                                    color: #fff;
+                                    font-size: 6px;
+                                    font-weight: bold;
+                                }
+                                span{
+                                    color: #fff;
+                                }
+                            }
+                            .total-gain{display: none;}
+                        }
+                    }
+                }
+            }
+            .pageSiparisOnay_lbfSatisSozlesme{
+                margin-bottom: 20px;
+            }
+            .pageSiparisOnay_lbfOnBilgilendirmeForm,
+            .pageSiparisOnay_lbfSatisSozlesme{
+                position: relative;
+                font-family: $regular;
+                font-size: 14px;
+                color: $lDark;
+                padding-left: 25px;
+                text-align: left;
+                padding: 10px 0 10px 25px;
+                .checkbox{
+                    width: 15px;
+                    height: 15px;
+                    position: absolute;
+                    left: 0;
+                    top: 10px;
+                    margin-right: 0;
+                    .sStylerMainWrp {
+                        span.cStyler{
+                            width: 15px;
+                            height: 15px;
+                            position: relative;
+                            border: 2px solid $light;
+                            cursor: pointer;
+                            @include transition(all .2s ease);
+                            &:before {
+                                content: '\e92e';
+                                font-family: 'icomoon';
+                                display: block;
+                                position: absolute;
+                                left: 0;
+                                top: 0;
+                                font-size: 11px;
+                                opacity: 0;
+                                @include transition(opacity .2s ease);
+                            }
+                            &.checked{
+                                background: none;
+                                border-color: #000;
+                                &:before{
+                                    opacity: 1;
+                                }
+                            }
+                        }
+                    }
+                }
+                .pageSiparisOnay_btnOnBilgilendirmeFormOnizle,
+                .pageSiparisOnay_btnSatisSozlesmeOnizle{
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    z-index: 1;
+                    width: calc(100% - 25px);
+                    height: 100%;
+                    table tbody tr th{
+                        a{
+                            display: block;
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                            span{display: none;}
+                        }
+                    }
+                }
+            }
+            .islemOnay{
+                background: #27d4a7;
+                padding: 15px 10px;
+                text-align: center;
+                color: #fff;
+                margin-top: 10px;
+            }
+        }
+    }
+
+    @media screen and (min-width: $breakpointXSM){
+        &-step1{
+            .ems-page-default{
+                &-order-delivery{
+                    .ems-grid-address{
+                        .add-new-address {
+                            width: auto;
+                            position: absolute;
+                            right: 0;
+                            top: -30px;
+                            z-index: 1;
+                            .btnAdresEkle {
+                                background: none;
+                                padding: 5px 0 5px 20px;
+                                width: auto;
+                                position: relative;
+                                span {
+                                    font-family: $regular;
+                                    font-size: 14px;
+                                    @include transition(all 0.2s ease);
+                                    color: $light;
+                                }
+                                &:before{
+                                    font-family:'icomoon';
+                                    content:'\e920';
+                                    position: absolute;
+                                    top: 50%;
+                                    left: 0;
+                                    width:10px;
+                                    height:10px;
+                                    font-size:10px;
+                                    margin-top: -5px;
+                                    @include transition(all 0.2s ease);
+                                    color: $light;
+                                }
+                                &:hover {
+                                    span { color: $btnColor; }
+                                    &:before{ color: $btnColor; }
+                                }
+                            }
+                        }
+                    }
+                }    
+            }    
+        }
+    }
+
+    &-step1{
+        .cart-section-right .ems-cart-summary .ems-cart-summary-coupon,
+        .cart-section-right .ems-cart-summary .ems-cart-summarybottom .next{display: none;}
+
+        .ems-page-default{ 
+            padding-top: 65px;
+            .ems-page-default {    
+                padding: 0;
+                border-top: none;
+            }
+            &-order-delivery{
+                .page-top-title span{font-size: 25px;}
+                .ems-page-order-cart{
+                    .cart-section-left{
+                        display: none;
+                    }
+                    .cart-section-right{
+                        .ems-cart-summary{
+                            .obj-step0{display: none;}
+                        }
+                    }
+                }
+
+                .ems-grid-address {
+                    position: relative;
+                    .col {
+                        flex: none;
+                        max-width: none;
+                    } 
+                    .ems-grid-row {
+                        padding: 0 25px 0 0;
+                        display: table;
+                        width: 100%;
+                        min-height: 80px;
+                        border-bottom: none;
+                        border-top: 1px solid $border;
+                        > div {
+                            display: table-cell;
+                            padding: 10px 0;
+                            vertical-align: middle;
+                        }
+                        .col-1 { width:20%; }
+                        .col-2 { width:40%; }
+                        .col-3 {
+                            width:25%;
+                            text-align: left;
+                            padding-left: 10px;
+                        }
+                        .col-4 { 
+                            width:15%; 
+                            padding-left: 20px;
+                            a {
+                                position: relative;
+                            }
+                        }
+                        .ems-address-name {
+                            max-width: 350px;
+                            margin-left: 0;
+                            font-family: $mediumA;
+                            font-size: 14px;
+                            .adresTip1, .adresTip2 {
+                                font-family: $regular;
+                                display: block;
+                                font-size: 14px;
+                                color: $darkBlack;
+                                margin-top: 5px;
+                            }
+                            .adresTip2{color: $light;}
+                        }
+                        .ems-address {
+                            font-size: 14px;
+                            line-height: 18px;
+                            max-width: 350px;
+                            margin-left: 0;
+                            margin-top: 10px;
+                            max-height: 55px;
+                            overflow: hidden;
+                            color: $darkBlack;
+                        }
+    
+                        .btnFatAdrSec {margin-top: 5px;}
+                        .ems-address-buttons{
+                            @include flex();
+                            @include flexDirection();
+                            align-items: center;
+                            justify-content: flex-end;
+                        }
+                        .ems-address-buttons-1{
+                            @include flexDirection(column);
+                            align-items: flex-start;
+                        }
+                        .btnTesAdrSec, .btnFatAdrSec {
+                            font-family: $regular;
+                            background: none;
+                            padding: 5px 0 5px 30px;
+                            width: 100%;
+                            display: inline-block;
+                            text-align: left;
+                            position: relative;
+                            text-transform: inherit;
+                            span {
+                                display: inline-block;
+                                vertical-align: middle;
+                                font-size: 14px;
+                                font-weight: normal;
+                                color: $lDark;
+                            }
+                            &:before{
+                                font-family:'icomoon';
+                                content:'';
+                                width: 16px;
+                                height: 16px;
+                                line-height: 20px;
+                                text-align: center;
+                                background: #ffffff;
+                                border: solid 1px $lDark;
+                                border-radius: 100%;
+                                display: inline-block;
+                                margin-right: 10px;
+                                position: relative;
+                                top: 5px;
+                                color: #fff;
+                                font-size: 9px;
+                            }
+                            &.emos_selected { 
+                                &:before{
+                                    width: 14px;
+                                    height: 14px;
+                                    border: solid 2px $lDark;
+                                    background: $lDark;
+                                    box-shadow: inset 0px 0px 0px 3px #fff;
+                                }
+                            }
+                            &:hover{
+                                span{
+                                    color: #3f434f;
+                                }
+                            }
+                        }
+                        .btnAdresListeGuncelle,
+                        .btnAdresListeSil{
+                            display: block;
+                            width: inherit;
+                            width: 24px;
+                            height: 24px;
+                            color: $lDark;
+                            i{ line-height: 24px; }
+                        }
+                        .btnAdresListeGuncelle{
+                            margin-right: 30px;
+                            i, i:before{
+                                color: $lDark;
+                                font-size: 20px;
+                            }
+                        }
+                        .btnAdresListeSil {
+                            i, i:before{
+                                color: $dGray;
+                                font-size: 14px;
+                            }
+                        }
+                    }
+                }
+                .same-address {
+                    border-top: 1px solid $border;
+                    padding-top: 15px;
+                    .dvFarkliFatAdrSec {
+                        position: relative;
+                        padding-left: 25px;
+                        line-height: 22px;
+                        span {
+                            font-size: 14px;
+                            display: inline-block;
+                            &.sStylerWrp_checkbox {
+                                position: absolute;
+                                left: 0;
+                                top: 50%;
+                                margin-top: -8px;
+                                .cStyler{
+                                    width: 15px;
+                                    height: 15px;
+                                    border: 2px solid $light;
+                                    position: relative;
+                                    cursor: pointer;
+                                    @include transition(all .2s ease);
+                                    &:before{
+                                        content:'\e92e';
+                                        font-family: 'icomoon';
+                                        display: block;
+                                        position: absolute;
+                                        left: 0.5px;
+                                        top: -5.5px;
+                                        font-size: 11px; 
+                                        opacity: 0;
+                                        @include transition(all .2s ease);
+                                    }
+                                    &.checked{
+                                        border-color: $lDark;
+                                        &:before{
+                                            opacity: 1;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .ems-cart-archive{display: none;}
+                .ems-delivery-tabs {
+                    .ems-delivery-tab{
+                        &-header{
+                            span{
+                                font-family: $avenir-bold;
+                                font-size: 16px;
+                                display: inline-block;
+                                margin-top: 30px;
+                                line-height: 1.5;
+                                margin-bottom: -10px;
+                                background: #fff;
+                                padding-right: 10px;
+                                position: relative;
+                                z-index: 1;
+                                &:empty{display: none;}
+                            }
+                            &:after {
+                                content: '';
+                                height: 2px;
+                                width: 100%;
+                                display: block;
+                                background: $border;
+                                position: relative;
+                                bottom: 3px;
+                            }
+                        }
+                    }
+                    .ems-cargo-tab {
+                        width: 100%;
+                        .divTeslimatKargo {
+                            margin-top: 30px;
+                            > ul{
+                                width: 100%;
+                                display: grid;
+                                grid-template-columns: 1fr 1fr 1fr;
+                                grid-gap: 10px;
+                                &:empty{display: none;}
+                            }
+                            > ul {
+                                > li{
+                                    position: relative;
+                                    display: inline-block!important;
+                                    vertical-align: middle;
+                                    padding: 20px 0;
+                                    font-size: 14px;
+                                    text-align: center;
+                                    background: #fafafa;
+                                    min-width: 100px;
+                                    flex: 1 auto;
+                                    cursor: pointer;
+                                    .kapiOdmFiyat.emos_invisible{
+                                        display: none !important;
+                                    }
+                                    img{
+                                        margin: 0 auto 10px auto;
+                                        max-width: 80px;
+                                        display: block;
+                                    }
+                                    .kargoAdi{
+                                        margin: 10px 0 5px 0;
+                                        height: 40px;
+                                        font-size: 12px;
+                                    }
+                                    > span{
+                                        display: block;
+                                    }
+                                    .sStylerMainWrp.sStylerWrp_radio{
+                                        width: 20px;
+                                        height: 20px;
+                                        margin: 0 auto;
+                                        .rStyler{
+                                            display: inline-block;
+                                            width: 18px;
+                                            height: 18px;
+                                            background: #fff;
+                                            border:1px solid $lDark;
+                                            border-radius: 100%;
+                                            position: relative;
+                                            &.checked{
+                                                width: 18px;
+                                                height: 18px;
+                                                border:2px solid $lDark;
+                                                background: $lDark;
+                                                box-shadow: inset 0px 0px 0px 3px #fff;
+                                            }
+                                        }
+                                        .radioButton{
+                                            position: absolute;
+                                            opacity: 0;
+                                            visibility: hidden;
+                                            width: 20px;
+                                            height: 20px;
+                                            top: 0;
+                                            left: 0;
+                                        }
+                                    }
+                                    .fiyat, .kapiOdmFiyat{
+                                        margin-bottom: 5px;
+                                        height: 22px;
+
+                                    } 
+                                }
+                            }
+                        }
+                    }
+                    .ems-gift-tab {
+                        position: relative;
+                        margin-top: 15px;
+                        padding: 35px 150px 18px 0px;
+                        height: 53px;
+                        overflow: hidden;
+                        &:empty{display: none;}
+                        .ems-delivery-tab-header {display: none;}
+                        .ems-delivery-wrp{
+                            &.gift{
+                                @include flex();
+                                @include flexDirection(column);
+                            }
+                            .hediyePktAciklama{
+                                order: 2;
+                                margin-top: 20px;
+                                span{
+                                    font-size: 14px;
+                                    color: $lDark;
+                                    line-height: 18px;
+                                }
+                            }
+                            &.note{ 
+                                order: 3;
+                                margin-top: 15px;
+                                > span{display: none;}
+                                textarea{
+                                    resize: none;
+                                    width: 100% !important;
+                                    height: 100px;
+                                    line-height: 1;
+                                    border: none;
+                                    padding: 10px;
+                                    border-radius: 2px;
+                                    background-color: #ffffff;
+                                    border: solid 1px #d3d3d3;
+                                }
+                            }
+                            &.packet{
+                                order: 1;
+                                position: absolute;
+                                top: 18px;
+                                padding-left: 25px;
+                                padding-top: 3px;
+                                padding-bottom: 3px;
+                                &:empty{display: none;}
+                                .sStylerMainWrp.sStylerWrp_checkbox{
+                                    position: absolute;
+                                    top: 50%;
+                                    left: 0;
+                                    z-index: 1;
+                                    margin-top: -10px;
+                                    &.sStylerWrp_checkbox {
+                                        position: absolute;
+                                        left: 0;
+                                        top: 50%;
+                                        margin-top: -10px;
+                                        .cStyler{
+                                            width: 15px;
+                                            height: 15px;
+                                            border: 2px solid $light;
+                                            position: relative;
+                                            cursor: pointer;
+                                            display: inline-block;
+                                            @include transition(all .2s ease);
+                                            &:before{
+                                                content:'\e92e';
+                                                font-family: 'icomoon';
+                                                display: block;
+                                                position: absolute;
+                                                left: 0;
+                                                top: 0;
+                                                font-size: 11px; 
+                                                opacity: 0;
+                                                @include transition(all .2s ease);
+                                            }
+                                            &.checked{
+                                                border-color: $lDark;
+                                                &:before{
+                                                    opacity: 1;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            span[id$="lbfTES_HEDIYEPAKET"]{
+                                display: block;
+                                font-size: 14px;
+                                color: $darkBlack;
+                                font-family: $mediumA;
+                                font-weight: bold;
+                            &:empty{display: none;}   
+                            }
+                        }
+                        &.selected{
+                            height: auto;
+                            overflow: visible;
+                        }
+                    }
+                }
+            }
+
+            /*Sepet Adres*/
+            &.ems-page-new-address{
+                max-width: 700px;
+                margin-left: auto;
+                margin-right: auto;
+                padding-top: 20px;
+                .page-top-title{
+                    max-width: 426px;
+                    margin: 0 auto;
+                    margin-bottom: 20px;
+                    span[id$="lbfUYA_ADRESEKLE"]{
+                        display: block;
+                        font-family: $bold;
+                        font-size: 16px;
+                        color: $lDark;
+                        text-align: left;
+                        &:empty{display: none;}
+                    }
+                }
+                .page-top-desc{
+                    max-width: 426px;
+                    display: block;
+                    margin: 0 auto;
+                    padding-bottom: 30px;
+                    text-align: left;
+                    font-family: $mediumAA;
+                }
+                .ems-form {
+                    .pageErrorAdresListe{
+                        > span{
+                            display: block;
+                            text-align: center;
+                            border-radius: 2px;
+                            border: 1px solid rgba(255, 55, 74, .7);
+                            padding: 10px;
+                            margin-top: 10px;
+                            margin-bottom: 30px;
+                            &:empty{display: none;}
+                        }
+                    }
+                    &-inner{
+                        .ems-field {
+                            max-width: 426px;
+                            margin-left: auto;
+                            margin-right: auto;
+                            .ems-form-obj{
+                                padding-bottom: 10px;
+                            }
+                            &.adresTip{
+                                max-width: 100%;
+                                display: none;
+                                .ems-form-label{display: none;}
+                                .ems-form-obj{
+                                    @include flex();
+                                    justify-content: space-around;
+                                    border-bottom: 1px solid $border;
+                                    padding-bottom: 0;
+                                    margin-bottom: 30px;
+                                    a{
+                                        font-family: $mediumA;
+                                        font-size: 25px;
+                                        color: $dGray;
+                                        padding:20px 15px;
+                                        position: relative;
+                                        &:after{
+                                            content: '';
+                                            width: 100%;
+                                            height: 2px;
+                                            background: none;
+                                            position: absolute;
+                                            bottom: 0;
+                                            left: 0;
+                                            @include transition(all 0.2s ease);
+                                        }
+                                        &.emos_selected{
+                                            color: $lDark;
+                                            &:after{
+                                                background: $lDark;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            &.tcCheck-2 {
+                                margin-top: 10px;
+                                .ems-form-label{
+                                    display: inline-block;
+                                    position: inherit;
+                                    top: 0;
+                                    left: inherit;
+                                    height: auto;
+                                    padding-left: 0;
+                                    opacity: 1;
+                                    visibility: visible;
+                                }
+                                .ems-form-obj{
+                                    padding: 0;
+                                    float: left;                                    
+                                }
+                                span.cStyler {
+                                    border: 2px solid $light;
+                                    width: 15px;
+                                    height: 15px;
+                                    @include transition(all .2s ease);
+                                            &:before{
+                                                content:'\e92e';
+                                                font-family: 'icomoon';
+                                                display: block;
+                                                position: absolute;
+                                                top: 2px;
+                                                left: 2px;
+                                                font-size: 11px; 
+                                                opacity: 0;
+                                                @include transition(all .2s ease);
+                                            }
+                                            &.checked{
+                                                border-color: $lDark;
+                                                background: none;
+                                                &:before{
+                                                    opacity: 1;
+                                                }
+                                            }
+                                }
+                            }
+                            &.button{
+                                padding-top: 20px;
+                                .ems-form-obj{
+                                    @media screen and (min-width: $breakpointXSM){
+                                        .btnDefault{
+                                            border:1px solid $lDark;
+                                            &:hover{
+                                                background: $btnAlternateColor;  
+                                                border-color: $btnAlternateColor;   
+                                                color: #fff;                                            
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }   
+                &.lnkAdrTip_1{
+                    .ems-form-inner .ems-field.tcCheck-2{display: none;}
+                }
+            }
+
+            &-order-payment{
+                padding: 0 0 30px 0;
+                .page-top-desc{
+                    display: none;
+                    padding-bottom: 0;
+                }
+                .ems-cart-pay-tab {
+                    border-bottom: 2px solid $Gray;
+                    ul {
+                        display: table;
+                        width: auto;
+                        display: flex;
+                        li {
+                            
+                            vertical-align: middle;
+                            min-width: 100px;
+                            width: 100%;
+                            a {
+                                display: block;
+                                padding: 50px 10px 20px 10px;
+                                text-align: center;
+                                font-family: $regular;
+                                font-size: 15px;
+                                color: $lDark;
+                                line-height: 1;
+                                position: relative;
+                                &.emos_selected {
+                                    font-family: $regular;
+                                    color: $red;
+                                    position: relative;
+                                    border-bottom: 2px solid $red;
+                                    margin-bottom: -2px;
+                                    &:after, &:before {
+                                        bottom: -2px;
+                                        left: 50%;
+                                        border: solid transparent;
+                                        content: " ";
+                                        height: 0;
+                                        width: 0;
+                                        position: absolute;
+                                        pointer-events: none;
+                                    }
+                                    &:after {
+                                        border-color: rgba(136, 183, 213, 0);
+                                        border-bottom-color: #fff;
+                                        border-width: 8px;
+                                        margin-left: -8px;
+                                    }
+                                    &:before {
+                                        border-color: rgba(194, 225, 245, 0);
+                                        border-bottom-color: $red;
+                                        border-width: 11px;
+                                        margin-left: -11px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .ems-cart-pay-type {
+                    position: relative;
+                    @media screen and (min-width: $breakpointXSM){ 
+                        max-width: 700px;
+                        padding-top: 5px; 
+                        margin-left: auto;
+                        margin-right: auto;
+                    }
+                    > div{
+                        &:empty{display:none;}
+                    }
+                    .tableTitleDefault {
+                        display: block;
+                        > span{
+                            font-family: $regular;
+                            font-size: 25px;
+                            color: $lDark;
+                            display: block;
+                            line-height: 1.5;
+                        }
+                        &.tableTitleOdemeBilgiPesinDiger {display: none;}
+                    }                    
+                    .ems-pay-credit-cart {
+                        div[id$="pnlKrediKartiBilgi"] {
+                            position: relative;
+                             display: table;
+                             width:100%;
+                             background: #fff;
+                        }
+                        .pageOdemeBilgi_chkBankaBonus {
+                            padding: 30px 150px 30px 20px;
+                            display: inline-block;
+                            width: 100%;
+                            margin-bottom: 30px;
+                            background: $Pink;
+                            > span{
+                                font-size: 14px;
+                                color:$darkBlack;
+                            }   
+                            span.checkbox, span.checkbox .sStylerMainWrp span.cStyler{
+                                width: 15px;
+                                height: 15px;
+                            }
+                            .ems-message{margin-top: 10px; margin-bottom: 0; border-color: $red; color: $red;}
+                            .ftpPuanKazan{display: none;}
+
+                        }
+                    }
+                    .ems-pay-point{
+                        &:empty{display: none;}
+                        .pageOdemeBilgi_chkKrediKartiBonusPara{
+                            padding: 10px 10px 20px 0; 
+                            > span{
+                                font-size: 14px;
+                                line-height: 20px;
+                            }
+                        }
+                    }
+
+                    /*kart*/
+                    .tableOdemeBilgiKrediKarti {
+                        @media screen and (min-width: $breakpointXSM){
+                            display: inline-block;
+                            vertical-align: top;
+                            width: 100%;
+                            padding-top: 15px;
+                            padding-bottom: 0px;
+                        }
+                        &:empty{display: none;}
+                        tbody{
+                            width: 100%;
+                            display: inline-block;
+                        }
+                        tr {
+                            @include flex();
+                            background: #fff;
+                            flex-direction: column;
+                            margin-bottom: 25px;
+                            &:first-child{margin-top: 0;}
+                            &:last-child{display: none;}
+                            &:nth-child(1), &:nth-child(4) {
+                                width: 50%;
+                                float: left;
+                            }
+                            &:nth-child(2), &:nth-child(3) {
+                                width: 50%;
+                                float: right;
+                                padding-left: 30px;
+                            }
+                        }
+                        th:empty, td:empty{
+                            display: none;
+                        }
+                        th, td{
+                            text-align: left;
+                        }
+                        th {
+                            flex-basis: 100%;
+                            flex-grow: 1;
+                            font-weight: normal;
+                            font-size: 14px;
+                            color: $darkBlack;
+                            width: 100%;
+                            > span{
+                                display: block;
+                                margin-bottom:15px;
+                                color: $light;
+                            }
+                        }
+                        td {
+                            flex-basis: 10%;
+                            flex-grow: 2;
+                            width: 100%;
+                            input {
+                                width: 100% !important;
+                                height: 40px;
+                                line-height: 28px;
+                            }
+                            select {
+                                color: $lDark;
+                                font-size: 14px;
+                            }
+                            &.tableOdemeBilgiKrediKarti_tddrpKSA_SPR_ID {
+                                select {
+                                    width: 100% !important;
+                                    
+                                }
+                                .sStylerMainWrp.sStylerWrp_select {
+                                    width: 50%;
+                                }
+                                .sStylerMainWrp.sStylerWrp_select {
+                                    padding-right: 10px;
+                                    .sStylerWrp{
+                                        border-right: 1px solid $border;
+                                        border-left: 1px solid $border;
+                                        height: 40px;
+                                        line-height: 28px;
+                                    }
+                                }
+                                .sStylerMainWrp.sStylerWrp_select:last-child {
+                                    padding-left: 2px;
+                                }
+                            }
+                            &.tableOdemeBilgiKrediKarti_tdtxtKKARTCVCNO {
+                                input {
+                                    vertical-align: middle;
+                                    border-right: 1px solid $border;
+                                    border-left: 1px solid $border;
+                                }
+                                nbsp{display:none;}
+                                > span {
+                                    > span > div{
+                                        font-family: $regular;
+                                        font-size: 12px;
+                                        line-height: 15px;
+                                    }
+                                    img{max-width: 24px;}
+                                }
+                            }
+                            &.tableOdemeBilgiKrediKarti_thlbfbtnOdemeTaksit {
+                                display: none;
+                            }
+                            &.tableOdemeBilgiKrediKarti_tdtxtKKARTCVCNO{
+                                &nbsp{
+                                    margin:0;
+                                    padding:0;
+                                    border:0;
+                                    outline:0;
+                                }
+                                position: relative;
+                                max-width: 140px;
+                                input{
+                                    padding-right: 50px;
+                                }
+                                span[id$="lbfKKT_CVC_NEDIR"]{
+                                    position: absolute;
+                                    right: -40px;
+                                    top: 50%;
+                                    width: 24px;
+                                    height: 24px;
+                                    margin-top: -8px;
+                                }
+                            }
+                            .div-cc-carttype {
+                                margin-top: 0;
+                                right: 10px;
+                                top: 50%;
+                                margin-top: -13.5px;
+                                
+                                img {
+                                    display: block;
+                                }
+                            }
+                            .cvc-info {
+                                position: relative;
+                                font-size: 14px;
+                                color: $darkBlack;
+                                > b {
+                                    font-weight: normal;
+                                    text-decoration: underline;
+                                    cursor:pointer;
+                                }
+                                > span {
+                                    display: none;
+                                    position: absolute;
+                                    left: 0;
+                                    top: -50%;
+                                    z-index: 2;
+                                    width: 300px;
+                                    background: #fff;
+                                    padding: 10px;
+                                    border: 1px solid $inputborder;
+                                }
+                                &:hover {
+                                    > span {
+                                        display: block;
+                                    }
+                                }
+                            }
+                        }
+                    }
+        
+                    /*taksit*/
+                    .pageOdemeBilgi_odemeTaksit {
+                        display: none !important;
+                        @media screen and (min-width: $breakpointXSM){
+                            display: inline-block !important;
+                            vertical-align: top;
+                            width: 47%;
+                        }
+                        &:empty{display: none !important;}
+
+                        > img { margin: 10px auto; display: none; }
+
+                        > .pageOdemeBilgi_lbfOdemeTaksit {
+                            text-align: center;
+                            background: #ff566b;
+                            padding: 15px 10px;
+                            font-size: 14px;
+                            color: #fff;
+                            margin-bottom: 10px; 
+                            display: none !important;
+                        }
+                        .tableOdemeTaksit {
+                            width: 100%;
+                            display: none;
+                            @media screen and (min-width: $breakpointXSM){
+                                padding-left: 30px;
+                                display: none;
+                            }
+                            td {
+                                font-size: 14px;
+                                padding: 10px;
+                                text-align: center;
+                                width: 33.333%;
+                                text-align: center;
+                                .sStylerMainWrp.sStylerWrp_radio{
+                                    width: 20px;
+                                    height: 20px;
+                                    display: inline-block;
+                                    .rStyler{
+                                        display: inline-block;
+                                        width: 20px;
+                                        height: 20px;
+                                        background: #fff;
+                                        border:1px solid $lDark;
+                                        border-radius: 100%;
+                                        position: relative;
+                                        &.checked{
+                                            background: $lDark;
+                                            &:after{
+                                                font-family:'icomoon';
+                                                content: '\e918';
+                                                font-size: 9px;
+                                                width: 10px;
+                                                height: 10px;
+                                                line-height: 11px;
+                                                color: #fff;
+                                                position: absolute;
+                                                top: 50%;
+                                                margin-top: -5px;
+                                                left: 0;
+                                                right: 0;
+                                                margin-left: auto;
+                                                margin-right: auto;
+                                                text-align: center;
+                                            }
+                                        }
+                                    }
+                                    .radioButton{
+                                        position: absolute;
+                                        opacity: 0;
+                                        visibility: hidden;
+                                        width: 20px;
+                                        height: 20px;
+                                        top: 0;
+                                        left: 0;
+                                        
+                                    }
+                                }
+                                &:nth-child(1) {
+                                    width: 20px;
+                                    padding-left: 0 !important;
+                                    padding-right: 0 !important;
+                                }
+                            }
+                            .tableTitleOdemeTaksit {
+                                display: table-row;
+                                td {
+                                    font-family: $mediumA;
+                                    padding: 10px 5px;
+                                    color: $dGray;
+                                    vertical-align: top;
+                                }
+                            }
+                            .taksit_pesin td {
+                                font-family: $mediumA;
+                                font-size: 14px;
+                                color: $darkBlack;
+                            }
+                        }
+                    }
+                    .odemeTaksitDesc,
+                    .masterpassContent,
+                    .btnBankaPromosyonUygula{
+                        display: none;
+                    }
+
+                    /*kartpuan*/
+                    .ems-pay-point {
+                        [id$="BONUSPARAHESAPLANIYOR"] {
+                            display: block;
+                            margin-top: 15px;
+                            font-size: 14px;
+                        }
+                    }
+
+                    /*diger*/
+                    .ems-pay-other {
+                        .OdemeBilgiPesinDigerOdemeNotu {
+                            padding: 20px 0;
+                            background: #fff;
+                            br {display: none;}
+                            > span {
+                                display: block;
+                                text-align: left;
+                                font-family: $regular;
+                                font-size: 14px;
+                                margin-bottom: 10px;
+                            }
+                            textarea {
+                                width: 100% !important;
+                                max-width: 400px;
+                                height: 100px;
+                                resize: none;
+                                border: solid 1px $border;
+                            }
+                        }
+                    }
+                    .tableOdemeBilgiHavale {
+                        width: 100%;
+                        .tableOdemeBilgiHavale_thlbfBNK_AD_HV{
+                            padding: 20px 30px;
+                            text-align: left;
+                            font-weight: normal;
+                            font-size: 14px;
+                            display: none;
+                        }
+                        .tableOdemeBilgiHavale_tddrpBNK_KOD_HV{
+                            background: #fff;
+                            table { width: 100%; }
+                            tr {
+                                display: table;
+                                table-layout: fixed;
+                                width: 100%;
+                                border-bottom: 1px solid $border;
+                                &:last-child{
+                                    border-bottom: none;
+                                }
+                                > td{
+                                    display: table-cell;
+                                    vertical-align: middle;
+                                    padding: 20px 0;
+                                }
+                            }
+                            .logo.emos_invisible{
+                                width: 15%;
+                            }
+                            .banka{
+                                width: 55%;
+                                padding-right: 15px;
+                                padding-left: 15px;
+                                b,span.hesapNo{
+                                    font-size: 14px;
+                                    font-weight: normal;
+                                    float: left;
+                                    width: 100%; 
+                                    clear: both;
+                                    color: $darkBlack;
+                                }
+                                .hesapNo{font-size: 14px;}
+                                b{ 
+                                    font-family: $regular;
+                                    margin-bottom: 5px;
+                                    font-weight: normal;
+                                }
+                                span.ibanNo {
+                                    float: left;
+                                    width: 100%; 
+                                    clear: both;
+                                    font-size: 14px; 
+                                    margin-top: 10px;
+                                    color: $darkBlack;
+                                }
+                                br {display: none;}
+                            }
+                            .link{
+                                width: 25%;
+                                > a{
+                                    background: none;
+                                    display: inline-block;
+                                    padding: 10px 10px 10px 35px;
+                                    text-align: left;
+                                    span {
+                                        color: $darkBlack;
+                                        font-size: 14px;
+                                    } 
+                                    &:before{
+                                        font-family: 'icomoon';
+                                        content: '';
+                                        width: 18px;
+                                        height: 18px;
+                                        line-height: 22px;
+                                        border: 1px solid $lDark;
+                                        border-radius: 100%;
+                                        background: #fff;
+                                        position: absolute;
+                                        top: 50%;
+                                        left: 0;
+                                        margin-top: -10px;
+                                        color: #fff;
+                                        text-align: center;
+                                        font-size: 9px;
+                                    }
+                                    &:hover{ background: none; }
+                                    &.emos_selected{
+                                        background: none;
+                                        &:before{
+                                            border: 2px solid $lDark;
+                                            background: #000000;
+                                            box-shadow: inset 0px 0px 0px 3px #fff;
+                                            width: 16px;
+                                            height: 16px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .pageDecOdemeBilgi{
+                        span{
+                            background: #fff;
+                            border: 1px solid $border;
+                            padding: 20px 20px 20px 20px;
+                            margin-top: 20px;
+                            margin-bottom: 30px;
+                            display: block;
+                        }
+                    }
+                }
+
+                .ems-cart-payment-wrapper{
+                    @media screen and (min-width: $breakpointXSM){ 
+                        max-width: 700px;
+                        margin-top: 0px;
+                        margin-left: auto;
+                        margin-right: auto;
+                        .ems-grid-payment-wrapper,
+                        .ems-cart-pay-adress {
+                            display: inline-block;
+                            vertical-align: top;
+                            width: 100%;
+                        }
+                    }
+
+                    .ems-grid-payment-wrapper{
+                        .ems-page-order-cart{
+                            .page-top-title,
+                            .ems-cart-button {display: none;}
+                        }
+                    }
+
+                    .ems-cart-pay-adress{
+                        .ems-cart-pay-inner{
+                            position: relative;
+                            z-index: 1;
+                            padding: 0px;
+                            .ems-delivery-address{
+                                padding-bottom: 20px;
+                                &:first-child{
+                                    margin-bottom: 30px;
+                                }
+                                .ems-delivery-address-lbl{
+
+                                    span{
+                                        display: inline-block;
+                                        font-family: "avenir-bold";
+                                        font-size: 16px;
+                                        line-height: 1.5;
+                                        background: #fff;
+                                        padding-right: 20px;
+                                        position: relative;
+                                        z-index: 1;
+                                    }
+                                    &:before {
+                                        content: '';
+                                        height: 2px;
+                                        width: 100%;
+                                        display: block;
+                                        background: #d3d3d3;
+                                        position: relative;
+                                        top: 13px;
+                                    }
+                                }
+                                .ems-delivery-address-obj{
+                                    span{
+                                        margin-top: 10px;
+                                        display: block;
+                                        font-family: $regular;
+                                        color: $darkBlack;
+                                        font-size: 14px;
+                                        line-height: 22px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .ems-cart-pay-adress.opened{
+                        .ems-cart-pay-inner{
+                            display: block;
+                        }
+                    }
+                    
+                    .ems-grid-payment-wrapper{
+                        .ems-grid-default-cart{
+                            background: #fff;
+                            position: relative;
+                            z-index: 1;
+                            padding: 0 30px;
+                            margin-top: 20px;
+                            margin-bottom: 30px;
+                            border: 0;
+                            overflow-x: hidden;
+                            max-height: 255px;
+                            display: block;
+                            &::-webkit-scrollbar {
+                                width: 3px
+                            }
+                        
+                            &::-webkit-scrollbar-track {
+                                background: #e1e1e1
+                            }
+                        
+                            &::-webkit-scrollbar-thumb {
+                                background: #000
+                            }
+                        
+                            &::-webkit-scrollbar-thumb:window-inactive {
+                                background: #000
+                            }
+                            .ems-grid-row{
+                                padding-top: 0px;
+                                padding-bottom: 20px;
+                                margin-bottom: 0;
+                                clear: both;
+                                border: 0;
+                                .ems-grid-content{
+                                    padding-left: 15px;
+                                    padding-right: 0;
+                                    &-inner{
+                                        padding-right: 50%;
+                                    }
+                                }
+                                &:last-child{border-bottom: none;}
+
+                                .ems-grid-name{
+                                    width: 50%;
+                                    padding-top: 0;
+                                    .piece-wrapper{
+                                        margin-top: 10px;
+                                        input{display: none;}
+                                        span[id$="lblURN_ADET"]{
+                                            display: inline-block;
+                                            color: #87888e;
+                                            font-family: $regular;
+                                            font-size: 14px;
+                                            display: none;
+                                            &:before{
+                                                content: 'Adet:';
+                                                color: #87888e;
+                                                font-family: $regular;
+                                                font-size: 14px;
+                                                display: inline-block;
+                                                margin-right: 5px;
+                                            }
+                                        }
+                                    }
+                                }
+                                .ems-grid-price-total{
+                                    width: auto;
+                                    display: table-cell;
+                                    vertical-align: middle;
+                                    right: 10px;
+                                    font{ 
+                                        text-align: right; 
+                                        font-size: 16px; 
+                                        &.netFiyatVrg {margin-bottom:5px;}
+                                        &.brutFiyatVrg {
+                                            font-size: 14px;
+                                        }
+                                    }
+                                    .basket-prc-wrp {
+                                        top: 10px;
+                                    }
+                                }
+                                .ems-grid-delete {
+                                    display: none;
+                                }
+                            }
+                        }
+                    }
+                    .ems-grid-payment-wrapper.opened{
+                        .ems-grid-default-cart{
+                            display: table;
+                        }
+                    }
+                    .ems-grid-payment-wrapper {
+                            > span[id$="lbfPAGEHDR_ODEMEBILGI"] {
+                                display: inline-block;
+                                font-family: $avenir-bold;
+                                font-size: 16px;
+                                line-height: 1.5;
+                                background: #fff;
+                                padding-right: 10px;
+                                position: relative;
+                                z-index: 1;
+                        }
+                        &:before {
+                            content: '';
+                            height: 2px;
+                            width: 100%;
+                            display: block;
+                            background: #d3d3d3;
+                            position: relative;
+                            top: 13px;
+                        }
+                    }
+                    .ems-cart-pay-adress{
+                        .ems-cart-payment-trigger {
+                            margin-bottom: 30px;
+                            display: none;
+                            > span{
+                                display: inline-block;
+                                font-family: $avenir-bold;
+                                font-size: 16px;
+                                margin-top: 30px;
+                                line-height: 1.5;
+                                background: #fff;
+                                padding-right: 10px;
+                                position: relative;
+                                z-index: 1; 
+                            }
+                            &:after {
+                                content: '';
+                                height: 2px;
+                                width: 100%;
+                                display: block;
+                                background: #d3d3d3;
+                                position: relative;
+                                bottom: 13px;
+                            }
+                        }
+                        &.opened{
+                            > span[id$="lbfPAGEHDR_ODEMEBILGI"],
+                            .ems-cart-payment-trigger > span{
+                                &:after{ content:'\e905'; }
+                            }
+                        }
+                    }
+                }
+
+                .ems-cart-agreement{
+                    @media screen and (min-width: $breakpointXSM){
+                        max-width: 700px;
+                        margin-left: auto;
+                        margin-right: auto;
+                    }
+                    .onBilgilendirmeForm,
+                    .siparisOnaySozlesme {
+                        
+                        position: relative;
+                        .tableTitleDefault {
+                            top: 0;
+                            left: 0;
+                            height: auto;
+                            width: 100%;
+                            span{
+                                color: $lDark;
+                                font-family: $bold;
+                                font-size: 15px;
+                                cursor: pointer;
+                                margin-top: 20px;
+                                background: #fafafa;
+                                padding: 30px;
+                                display: block;
+                                &:after {
+                                    content:'\e900';
+                                    font-family: 'icomoon';
+                                    display: inline-block;
+                                    float: right;
+                                }
+                            }
+                        }
+                        .siparisOnaySozlesmeMetin,
+                        .onBilgilendirmeFormMetin{
+                            .szForm{
+                                .form-title{
+                                    display: none;
+                                }
+                            }
+                            > span{
+                                height: 0px !important;
+                                overflow-x: hidden !important;
+                                padding-right: 5px;
+                            }
+                            ::-webkit-scrollbar {
+                                width: 3px;
+                            }
+                            ::-webkit-scrollbar-track {
+                                background: $dGray;
+                            }
+                            ::-webkit-scrollbar-thumb {
+                                background: $lDark;
+                            }
+                            ::-webkit-scrollbar-thumb:window-inactive {
+                                background: $lDark;
+                            }
+                        }
+                        &.opened {
+                            background: #fafafa;
+                            .siparisOnaySozlesmeMetin,
+                            .onBilgilendirmeFormMetin{ 
+                                > span{
+                                    height: 180px !important;
+                                    
+                                }
+                            }
+                            &.onBilgilendirmeForm,
+                            &.siparisOnaySozlesme {
+                                .tableTitleDefault span {
+                                    &:after {
+                                        transform: rotate(180deg);
+                                    }
+                                }
+                            }
+                            .siparisOnaySozlesmeMetin,
+                            .onBilgilendirmeFormMetin{
+                                padding: 0 30px 30px 30px;
+                            }
+
+                        }
+                    }
+                    .pageSiparisOnay_lbfOnBilgilendirmeForm,
+                    .pageSiparisOnay_lbfSatisSozlesme{
+                        display: none;
+                    }
+                }
+                @media screen and (min-width: $breakpointXSM){
+                    .paymentInfo{
+                        max-width: 700px;
+                        margin-left: auto;
+                        margin-right: auto;
+                        > div{
+                            margin-top: 30px;
+                        }
+                    }
+                }
+                .paymentInfo{
+                    h3{
+                        font-family: $mediumA;
+                        font-size: 18px;
+                    }
+                }
+                .pageOdemeBilgi_chkKrediKartiBonusPara {
+                    span.cStyler {
+                        position: relative;
+                        &:before {
+                            content: '\e92e';
+                            font-family: 'icomoon';
+                            display: block;
+                            position: absolute;
+                            left: 0;
+                            top: -3px;
+                            font-size: 11px;
+                            opacity: 0;
+                            @include transition(opacity .2s ease);
+                        }
+                        &.checked{
+                            background: none;
+                            border-color: #000;
+                            &:before{
+                                opacity: 1;
+                            }
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+    /* Sipariş Sonuc */
+    .pageSiparisSonuc {
+        text-align: left;
+        padding-top: 60px;
+        padding-bottom: 60px;
+        max-width: 700px;
+        margin: 0 auto;
+        .pageDescSiparisSonuc,
+        .pageDescSiparisSonucErr{
+            padding-bottom: 0;
+            padding-left: 340px;
+            position: relative;
+        }
+        .pageSiparisSonuc_lbfSiparisBasarili {
+            .sonucTitle {
+                color: $green;
+                padding-top: 0px;
+            }
+        }
+        .pageDescSiparisSonucErr{
+            br{display: none;}
+        }
+        .sip-success-desc{line-height: 20px;}
+        .success-icon{
+            position: absolute;
+            left: 0;
+            margin-left: auto;
+            margin-right: auto;
+            float: left;
+            i{ line-height: 82px; }
+            i:before{
+                font-size: 31px;
+                color: #fff;
+            }
+        }
+        .error-icon{
+            position: absolute;
+            left: 0;
+            margin-left: auto;
+            margin-right: auto;
+            float: left;
+            i{ line-height: 80px; }
+            i, i:before{
+                font-size: 27px;
+            }
+            i:before{
+                color: #fff;
+            }
+        }
+        .sonucTitle {
+            font-family: $mediumA;
+            font-size: 30px;
+            color: $red;
+            margin-top: 20px;
+            margin-bottom: 30px;
+            padding-top:80px; 
+            display: block;
+        }
+        .ems-sip-success{
+            a{
+                max-width: 330px;
+                margin-top: 20px;
+                margin-left: auto;
+                margin-right: auto;
+                @media screen and (min-width: 850px){
+                    border: 1px solid $lDark;
+                    &:hover{
+                        background: $btnAlternateColor;
+                        border-color: $btnAlternateColor;
+                        span {
+                            color: #fff;
+                        } 
+                    }
+                    &.btnAnasayfaGit{
+                        &:hover{
+                            background: $btnAlternateColor;
+                            border-color: $btnAlternateColor;
+                            span {
+                                color: #fff;
+                            }
+                        }
+                    }
+                }
+                &.btnAnasayfaGit{
+                    background: none;
+                    color: $darkBlack;
+                }
+            }
+        }
+        .sip-success-desc{
+            strong{
+                display: inline-block;
+                font-family: $bold;
+            }
+        }
+        .pageSiparisSonuc_btnSiparisSonuc{
+            padding-left: 340px;
+            .btnSiparisSonucSepeteDon,
+            .btnOdemeBilgiDon{
+                border: 1px solid $lDark;
+            }
+            @media screen and (min-width: $breakpointXSM){ 
+                .btnSiparisSonucSepeteDon:hover,
+                .btnOdemeBilgiDon:hover{
+                    background: $btnAlternateColor;
+                    border-color: $btnAlternateColor;
+                    span {
+                        color: #fff;
+                    }
+                }
+            }
+        }
+        .pageSiparisSonuc_btnSiparisSonucSepeteDon,
+        .pageSiparisSonuc_btnOdemeBilgiDon{
+            table{
+                display: table !important;
+                max-width: 330px;
+                margin-top: 20px;
+            }
+        }
+    }
+}
+
+/*siparis sonuc*/
+.ems-cart-layout-success{
+    .ems-page-cart{padding-right: 0;}
+    .ems-page-cart-colmn-1-top{
+        padding:30px 20px;
+        justify-content: center;
+        .ems-page-cart-logo{ width: 150px; }
+
+        div[id$="pnlSiparisBaslik"]{ display: none; }
+    }
+    .ems-page-cart-colmn-1{min-height: auto; border-right: none; float: none; width: 100%;}
+    .ems-page-cart-colmn-2{display: none;}
+    .site-discount-banner-alternate {display: none;}
+}
+
+.yeniAdresEkle {
+    width: 100%; 
+    max-width: 480px; 
+    margin: 0 auto; 
+    padding: 20px 0;
+    height: 200px;
+    img {
+        float: left;
+        margin-right: 20px;
+    }
+    b {
+        font-size: 16px;
+        color: $red;
+        font-family: avenir-bold;
+        display: block;
+        margin: 50px 0 15px 0;
+    }
+    span {
+        color: $light !important;
+        line-height: 20px;
+        font-family: $mediumA !important;
+        padding: 0 !important;
+        font-size: 14px !important;
+        font-weight: normal !important;
+        &:before {
+            display: none !important;
+        }
+    }
+}
+
+/******site en-US******/
+.en-US .ems-page-cart-step1 .ems-page-default-order-payment .ems-cart-payment-wrapper .ems-grid-payment-wrapper{
+    .ems-grid-default-cart .ems-grid-row .ems-grid-name .piece-wrapper span[id$="lblURN_ADET"]:before{content:'Quantity:';}
+}
+/******site en-US******/
+
+
+//Order payment resize setting
+@media screen and (max-width: 1250px){
+    .ems-page-cart{
+
+        .cart-section-left{
+            .ems-grid-default{
+                .ems-grid-row{
+                    .ems-grid-piece{
+                        span[id$="lblSCD_AD1"]{display:none;}
+                    }
+                }
+            }
+        }
+        &-step1{
+            .ems-page-default{
+                &-order-payment{
+                    .ems-cart-pay-tab{
+                        ul{
+                            li{min-width: auto;}
+                        }
+                    }
+                    .cart-section-left{
+                        .ems-grid-default{
+                            .ems-grid-row {
+                                .ems-grid-content-inner{
+                                    padding-left: 0;
+                                    padding-right: 0;
+                                }
+                            }
+                        }
+                    }
+                    .ems-cart-pay-type{
+                        .pageDecOdemeBilgi span{
+                            padding-left: 20px;
+                        }
+                        .tableOdemeBilgiKrediKarti{
+                            width: 100%;
+                            padding: 20px 0 0 0;
+                            display: block;
+                            border-right: none;
+                            td{
+                                &.tableOdemeBilgiKrediKarti_tdtxtKKARTCVCNO{
+                                    > span{width: 45%;}
+                                }
+                            }
+                        }
+                        .pageOdemeBilgi_odemeTaksit{
+                            width: auto;
+                            padding: 20px 0;
+                            display: none !important;
+                            border-left: none;
+                            border-top: 1px solid $border;
+                            &:empty{display: none !important;}
+                        }
+                        .ems-pay-other {
+                            .OdemeBilgiPesinDigerOdemeNotu {
+                                padding: 20px 15px;
+                                textarea{max-width: 100%;}
+                            }
+                        }
+                        .ems-pay-credit-cart {
+                            .pageOdemeBilgi_chkBankaBonus {
+                                padding-right:20px;
+                            }
+                        }
+                    }
+                    .ems-cart-payment-wrapper{
+                        .ems-grid-payment-wrapper{
+                            padding-right: 0;
+                        }
+                        .ems-cart-pay-adress{
+                            padding-left: 0;
+                        }
+                        .ems-grid-payment-wrapper,
+                        .ems-cart-pay-adress{
+                            width: 100%;
+                            display: block;
+                        }
+                        .ems-cart-pay-adress{
+                            margin-top: 20px;
+                            .ems-cart-payment-trigger > span{
+                                padding-left: 20px;
+                                padding-right: 20px;
+                                &:after{right: 20px;}
+                            }
+                        }
+                        .ems-grid-payment-wrapper{
+                            > span[id$="lbfPAGEHDR_ODEMEBILGI"]{
+                                padding-right: 20px;
+                                &:after{right: 20px;}
+                            }
+                            .ems-grid-default-cart{
+                                padding-left: 20px;
+                                padding-right: 20px;
+                            }
+                        }
+                    }
+                    .ems-cart-agreement{
+                        .onBilgilendirmeForm,
+                        .siparisOnaySozlesme{
+                            margin-top: 10px;
+                        }
+                        .onBilgilendirmeForm .tableTitleDefault,
+                        .siparisOnaySozlesme .tableTitleDefault{
+                            span {
+                                margin-top: 10px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1024px){
+    .ems-page-cart-colmn-1-top{padding-left: 15px;}
+}
+
+@media screen and (max-width: $breakpointXSM){
+    .cart-member-menu{display: none;}
+    .ems-cart-layout{
+        .mbHeader{
+            > div{
+                &.mbMember{display: none;}
+            }
+        }
+        .site-header {
+            min-height: 50px;
+            .ems-container-full-top .ems-col.right{
+                display: none;
+            }
+        }
+        .site-footer{
+            height: 0;
+            width: 0;
+            font-size: 0;
+            overflow: hidden;
+        }
+        &.page-cart-empty-layout {
+            .tabloTabBtnAdimSiparis {
+                display: none;
+            }
+            .mbHeader {
+                border-bottom: 1px solid $red;
+            }
+        }
+    }
+
+    .ems-page-cart .cart-section-right .ems-clone-cart-notify{display: none;}
+
+    .page-cart-empty-layout{
+        .ems-page-cart .ems-page-order-cart{display: block;}
+        .ems-page-order-cart span[id$="lbfSPT_SEPETBOS"]{ display: inherit; vertical-align: top; height: 100%; }
+        .ems-page-cart-step0 .ems-pay-info {padding-top: 20px; border-top: none; position: relative; bottom: inherit; left: inherit;}
+        .ems-page-cart-step0 .ems-pay-info .swiper-slide{width: 200px;}
+
+    }
+
+    .ems-cart-layout-success .ems-page-cart-colmn-1-top{display: none;}
+
+    .ems-cart-ntf-wrapper{
+        .kargoBilgi{
+            margin-bottom: 0;
+            padding: 20px 20px 20px 100px;
+            color: #5c606d;
+            font-size: 12px;
+            .kargoBilgiIcon{
+                position: absolute;
+                top: 50%;
+                left: 20px;
+                margin-top: -18px;
+                margin-bottom: 0;
+                width: 35px;
+                height: 35px;
+                i{width: 35px; height: 35px;}
+                i, i:before{font-size: 35px;}
+            }
+        }
+    }
+    
+    .tabloTabBtnAdimSiparis{
+        width: 100%;
+        border-bottom: 1px solid $red;
+        td{
+            width: 100%;
+            > span {
+                padding: 0;
+            }
+        }
+    }
+    .mobile-element-cart-warning{
+        .desktop-element{
+            display: block !important;
+        }
+        .ems-cart-warning-1:first-child{margin-top: 0;}
+    }
+
+    .ems-cart-warning-wrapper {
+        margin: 0 0 0px 0;
+        background: #f0f0f0;
+        padding-bottom: 30px;
+        .swiper-pagination-bullets {
+            bottom: 15px;
+            display: block;
+            .swiper-pagination-bullet {
+                background: $light;
+                &.swiper-pagination-bullet-active {
+                    background: #000;
+                }
+            }
+        }
+        .swiper-button-next, .swiper-button-prev {display: none;}
+        .swiper-inner {
+            > ul {
+                margin: 0px;
+                .ems-cart-warning-1 {
+                    flex: auto;
+                    border-right: 1px solid $Gray;
+                    margin: 0;
+                    min-width: 320px; 
+                    &.specPrd {
+                        .prdLabel {
+                            right: 0px;
+                            .labelBorder {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .ems-cart-warning-1 {
+            &:last-child {border: 0 !important;}
+        }
+    }
+
+    .ems-page-cart-colmn-1-top{padding-left: 0;}
+
+    .ems-page-cart {
+        padding-bottom: 50px!important;
+        &.ems-page-cart-step0 {
+            /*padding-bottom: 250px;*/
+            .swiper-title-2 span {
+                padding:10px 20px;
+            }
+        }
+        &.ems-page-cart-step1 {
+            /*padding-bottom: 300px;*/
+        }
+        .ems-pay-info{display:none;}
+        .ems-page-default-order-delivery {
+            padding-top: 0;
+        }
+        .cart-section-left{
+            .page-top-title{
+                display: block;
+                span{
+                    font-size: 20px;
+                    padding-bottom: 0;
+                    line-height: 1.4;
+                }
+            }
+        }
+
+        .no-prd{
+            padding: 80px 15px 20px 15px;
+            height: auto;
+            .no-prd-header{
+                min-height: 50px;
+                padding-top: 16px;
+                padding-bottom: 14px;
+                a img{max-width: 90px;}
+    
+            }
+            img {
+                float: none;
+                margin-right: 0;
+            }
+            .icon-bag {
+                width: 45px;
+                height: 45px;
+                i{
+                    line-height: 45px;
+                    display: block;
+                }
+                i, i:before {
+                    font-size: 45px;
+                }
+            }
+            .g-home {
+                float: none;
+            }
+            p, span {
+                text-align: center;
+            }
+        }
+
+        .cart-section-right,
+        .cart-section-left{
+            width: 100%;
+            display: block;
+            padding: 0;
+        }
+        .ems-pay-type-desc {
+            padding: 0 20px;
+            h1 {
+                font-size: 20px;
+            }
+        }
+        .cart-section-left{
+            .ems-grid-default{
+                .ems-grid-row{
+                    .ems-grid-price-total{
+                        font{
+                            &.brutFiyatVrg{margin-left: 0; margin-top: 3px;}
+                        }
+                    }
+                }
+            }
+
+            .ems-cart-button{
+                .ems-cart-btn .btnAlisverisDevam{
+                    /*margin-top: 0; */
+                    margin-left: 13px;
+                }
+            }
+
+            .pageErrorStokKontrol{
+                > span{
+                    margin-left: 20px;
+                    margin-right: 20px; 
+                    margin-top: 20px; 
+                }
+            }
+            .gridSepetStok{
+                margin-bottom: 20px;
+                tbody{
+                    tr.gridRowSepetStok,
+                    tr.gridAlternateSepetStok{
+                        td:nth-child(1){width: 80px !important;}
+                        td:nth-child(1) img{width: 80px;}
+                        td:nth-child(3){width:25% !important;}
+                    }
+                }
+            }
+            .ems-grid-default {
+                padding: 0 15px;
+                .ems-grid-row {
+                    padding: 20px 0 10px 0;
+                    border-bottom: 1px solid $Gray !important;
+                    /*margin-bottom: 10px;*/
+                    display: block;
+                    .ems-grid-name {
+                        padding: 0 40px 30px 10px;
+                    }
+                    .ems-grid-img {
+                        float: left;
+                        width: 100px;
+                        img {
+                            width: 100px;
+                            margin-bottom: 10px;
+                        }
+                    }
+                    .ems-grid-piece {
+                        display: block;
+                        clear: both;
+                        text-align: left;
+                    }
+                    .ems-grid-delete {
+                        position: absolute;
+                        right: 10px;
+                        top: 30px;
+                    }
+                    .ems-grid-piece {
+                        a {
+                            width: 35px; 
+                            height: 35px; 
+                            background: #dbdbf9; 
+                            padding: 12px;
+                            display: inline-block;
+                            &:hover {
+                                background: $btnAlternateColor;
+                                color: #fff;
+                            }
+                        }
+                        input {
+                            width:50px !important;
+                            height: 35px;
+                            background: #f6f6f6;
+                            line-height: 28px;
+                            display: inline-block;
+                            font-size: 18px;
+                            font-family: $mediumAA;
+                            border-radius: 0;
+                            position: relative;
+                            top: 1px;
+                        }
+                    }
+                    .ems-grid-price-total {
+                        display: flex;
+                        flex-direction: row;
+                        position: absolute;
+                        right: 0;
+                        bottom: 10px; 
+                        /*height: 35px;*/
+                        justify-content: center;
+                        .gridSepetListe_gercekFiyat {
+                            order: 1;
+                        }
+                        font {
+                            font-size: 16px;
+                            .d {
+                                font-size: 12px;
+                                /*vertical-align: top;*/
+                            }
+                            &.brFiyat {
+                                margin-bottom:0;
+                            }
+                        }
+                        .basket-prc-wrp {
+                            top: 0px;
+                        }
+                        .discountRatio {
+                            position: relative;
+                            bottom: 0px;  
+                        }
+                    }
+                }
+                &.ems-grid-address {
+                    .ems-grid-row {
+                        padding: 20px 0;
+                        border-top: 0;
+                        border-bottom: 1px solid $Gray;
+                        > div {
+                            display: block;
+                            width: 100%;
+                            padding: 0 0 10px 0;
+                        }
+                        .col-3 {
+                            padding: 0;
+                        }
+                        .col-4 {
+                            position: absolute;
+                            top: 15px;
+                        }
+                        .ems-address-buttons-1 {
+                            display: inline-block;
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: space-between;
+                            a {
+                                display: inline-block;
+                                padding: 0;
+                                margin: 0;
+                                width: auto;
+                            }
+                        }
+                        .ems-address {
+                            margin-top: 0;
+                        }
+                    }
+                    .add-new-address {
+                        margin-top: 20px;
+                    }
+                } 
+            }
+        }
+        .cart-section-right {
+            /*padding-left: 15px;
+            padding-right: 15px;*/
+            .ems-cart-summary { 
+                    position: relative;
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                    z-index: 9;
+                    background: #fafafa;
+                    padding: 30px;
+                    display: flex;
+                    flex-direction: column;
+                > span{
+                    .ems-cart-summary-title{
+                        margin-top: 0;
+                        padding-top: 20px;
+                        border-top: 1px solid $border;
+                        margin-top: 40px;
+                    }
+                }
+                .ems-cart-alternate{
+                    .ems-grid-default{
+                        margin-top: 40px;
+                        .ems-grid-header{
+                            span{
+                                text-align: center;
+                                font-size: 12px;
+                                letter-spacing: 1px;
+                            }
+                        }
+                        .ems-grid-row{
+                            width: 100%;
+                            display: table;
+                            table-layout: fixed;
+                            background: #ecedee;
+                            > div{
+                                display: table-cell;
+                                vertical-align: middle;
+                            }
+                            .ems-grid-img{
+                                width: 50px;
+                            }
+                            .ems-grid-cart-addBtn{
+                                padding-right: 0;
+                                width: 40px;
+                                .btnCartAddBtn{
+                                    padding-top: 27px;
+                                    padding-bottom: 28px;
+                                    span{display: none;}
+                                    i, i:before{
+                                        color: #fff;
+                                        font-size: 20px;
+                                        font-weight: normal;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .next{
+                    a {
+                        position: fixed;
+                        left: 0;
+                        width: 100%;
+                        bottom: 0;
+                        z-index: 20;
+                        font-size: 16px;
+                        letter-spacing: 1.3px;
+                        min-height: 50px;
+                        max-height: 50px;
+                        padding-top: 5px;
+                        padding-bottom: 5px;
+                        line-height: 42px;
+
+                    }
+                }
+            }
+            .ems-cart-summary-coupon {
+                > span {
+                    padding-bottom: 0px;
+                }
+                &.opened {
+                    >span {
+                        padding-bottom: 20px;
+                    }
+                }
+            }
+            .ems-cart-summary-coupon-body {
+                margin-bottom: 0 !important;
+                input {
+                    height: 40px;
+                }
+            }
+        }
+
+        &-step1{
+            .ems-page-default{
+                &-order-delivery{
+                    .add-new-address{
+                        .btnAdresEkle {
+                            background: none;
+                            padding: 5px 0 5px 20px;
+                            width: auto;
+                            position: relative;
+                            span {
+                                font-family: $regular;
+                                font-size: 14px;
+                                @include transition(all 0.2s ease);
+                                color: $light;
+                            }
+                            &:before{
+                                font-family:'icomoon';
+                                content:'\e920';
+                                position: absolute;
+                                top: 50%;
+                                left: 0;
+                                width:10px;
+                                height:10px;
+                                font-size:10px;
+                                margin-top: -5px;
+                                @include transition(all 0.2s ease);
+                                color: $light;
+                            }
+                        }
+                    }
+                    .same-address{
+                        margin-top: 0px;
+                        margin-bottom: 30px;
+                        border-top: 0;
+                        padding-top: 20px;
+                    }
+                    .ems-delivery-tabs{
+                        padding: 0 15px;
+                        .ems-delivery-tab-header{
+                            &:empty{display: none;}
+                            span{
+                                font-size: 16px;   
+                                margin-top: 10px;
+                            }
+                        }
+                        .ems-cargo-tab{
+                            .divTeslimatKargo {
+                                > ul{
+                                    /*display: inline-block !important;*/
+                                    grid-template-columns: 1fr 1fr;
+                                    > li{
+                                        /*width: 50%;*/
+                                        max-width: none;
+                                        margin: 0;
+                                        /*border: 6px solid #fff;*/
+                                        .kargoBilgi{
+                                            #gumrukaciklama, #gumrukaciklama2{
+                                                width: 280px !important;
+                                                right:-170px !important;
+                                                padding: 15px;
+                                                font-size: 13px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        .ems-gift-tab{
+                            height: 55px;
+                            padding: 35px 0px 18px 0px;
+                            margin-bottom: 20px;  
+                        }
+                    }
+                }
+
+                &-order-payment{
+                    padding-bottom: 10px;
+                    .paymentInfo{
+                        display: none;
+                        margin-top: 30px;
+                    }
+                    .ems-cart-payment-wrapper{
+                        padding: 0 15px;
+                        .ems-grid-payment-wrapper{
+                            padding-right: 0;
+                            > span[id$="lbfPAGEHDR_ODEMEBILGI"]{
+                                /*padding-top: 20px;*/
+                                padding-bottom: 20px;
+                            }
+                            .ems-grid-default-cart {
+                                padding: 0;
+                                .ems-grid-row {
+                                    margin-bottom: 20px;  
+                                    &:last-child {
+                                        border: 0 !important;
+                                    }
+                                    .ems-grid-piece {
+                                        position: absolute;
+                                        left: 110px;
+                                        bottom: 30px;
+                                        .piece-wrp {
+                                            span {
+                                                &:after {
+                                                    content: 'Ad.';
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        .ems-cart-pay-adress{
+                            padding-left: 0;
+                            .ems-cart-payment-trigger > span{
+                                padding-top: 20px;
+                                padding-bottom: 20px;
+                            }
+                        }
+                    }
+                    &-agreement {
+
+                    }
+                    .ems-cart-pay-type{
+                        /*margin-top: 20px;*/
+                        .tableTitleDefault > span{font-size: 20px;}
+                        .pageDecOdemeBilgi span{margin-top: 0;}
+                        .tableOdemeBilgiHavale {
+                            .tableOdemeBilgiHavale_tddrpBNK_KOD_HV {
+                                tr{
+                                    @include flex();
+                                    @include flexDirection(column);
+                                    table-layout: inherit;
+                                    .logo.emos_invisible{
+                                        order: 1;
+                                        width: auto;
+                                    }
+                                    .banka{
+                                        order: 2;
+                                        width: 100%;
+                                        padding: 0;
+                                    }
+                                    .link{
+                                        order: 3;
+                                        width: 100%;
+                                    }
+                                }
+                            }
+                        }
+                        .tableOdemeBilgiKrediKarti{
+                            td.tableOdemeBilgiKrediKarti_tdtxtKKARTCVCNO > span > span > div{left: -155px !important;}
+                        }
+                        .tableOdemeBilgiKrediKarti {
+                            padding: 20px 15px;
+                            tr {
+                                width: 100% !important;
+                                padding-left: 0 !important;
+                                margin-bottom: 20px;
+                            }
+                            th > span {
+                                margin-bottom: 10px;
+                            }
+                            td {
+                                &.tableOdemeBilgiKrediKarti_tdtxtKKARTCVCNO {
+                                    span[id$="lbfKKT_CVC_NEDIR"] {
+                                        margin-top: -8px;
+                                    }
+                                }
+                                &.tableOdemeBilgiKrediKarti_tddrpKSA_SPR_ID {
+                                    span {
+                                        &:last-child {padding-right: 0 !important;}
+                                    }
+                                }
+                            }
+                        }
+                        .tableOdemeBilgiHavale {
+                            padding: 0 20px;
+                            display: block;
+                        }
+                        .ems-pay-point {
+                            .pageOdemeBilgi_chkKrediKartiBonusPara {
+                                padding-left: 15px;
+                            }
+                        }
+                    }
+                    .ems-cart-body-top {
+                        &-wrp {
+                            padding:0 15px;
+                            border-bottom:2px solid $Gray;
+                            text-align: center;
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                        }
+                    }
+                    #lbfPayTabText {
+                        display: inline-block;
+                        margin-right: 25px;
+                        white-space: nowrap;
+                    }
+                    .ems-cart-pay-tab {
+                        text-align: center;
+                        display: inline-block;
+                        position: relative;
+                        width:100%;
+                        max-width: 220px;
+                        border: 0;
+                        > span {
+                            /*height: 45px;*/
+                            width:100%;
+                            max-width: 220px;
+                            padding: 13px;
+                            border: 1px solid $border;
+                            border-radius: 2px;
+                            display: inline-block;
+                            margin: 15px 0;
+                            text-align: left;
+                            cursor: pointer;
+                            i {
+                                font-size: 9px;
+                                float: right;
+                                margin-top: 4px;
+                                &:before {
+                                    content: '\e900';
+                                    font-family: 'icomoon';
+                                    display: inline-block;
+                                    font-size: 13px;
+                                    color: $light;
+                                }
+                            }
+                        }
+                        ul {
+                            position: absolute;
+                            border: 1px solid $border;
+                            width: 100%;
+                            background: #fff;
+                            position: absolute;
+                            left: 0;
+                            /*top: 58px;*/
+                            margin-top: -16px;
+                            z-index: 1;
+                            border-bottom-left-radius: 2px;
+                            border-bottom-right-radius: 2px;
+                            display: none;
+                            li {
+                                width: 100%;
+                                display: inline-block;
+                                border: 0;
+                                border-bottom: 1px solid $Gray;
+                                a {
+                                    border: 0 !important;
+                                    font-family: $mediumA;
+                                    padding: 15px;
+                                    text-align: left;
+                                    font-size: 15px;
+                                    &.emos_selected {
+                                        color: #000;
+                                        &:before, &:after {
+                                            display:none;
+                                        }
+                                    }
+                                }
+                                &.selected {
+                                    display: none;
+                                }
+                                &:last-child {
+                                    border: 0;
+                                }
+                            }
+                        }
+                        &.opened {
+                            ul {
+                                display: block;
+                            }
+                        }
+                    }
+                }
+                &.ems-page-new-address{
+                    max-width: 100%;
+                    padding: 0 15px 20px 15px;
+                    .page-top-title{
+                        display: block;
+                        margin-top: 30px;
+                        text-align: left;
+                        span[id$="lbfUYA_ADRESEKLE"]{font-size: 20px;}
+                    }
+                    .ems-form-inner{
+                        .ems-field.adresTip{
+                            .ems-form-obj a{font-size:18px;}
+                        }
+                        .ems-form-obj {
+                            a {
+                                border: 1px solid #000000;
+                                &:hover {
+                                    background: $btnAlternateColor;
+                                    border-color: $btnAlternateColor;
+                                    color: #fff;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+
+        .pageSiparisSonuc{
+            padding:50px 20px;
+            .sonucTitle{
+                /*font-size: 18px;*/
+                padding: 0;
+            }
+            .pageDescDefault {
+                display: block;
+                padding: 0;
+                text-align: center;
+            }
+            .error-icon{
+                width: 100%;
+                height: auto;
+                position: relative;
+                float: none;
+                max-width: 150px;
+                i{
+                    line-height: 62px;
+                    &:before{
+                        font-size: 23px;    
+                    }
+                }
+            }
+            .success-icon{
+                width: 100%;
+                height: auto;
+                position: relative;
+                float: none;
+                max-width: 150px;
+                i{
+                    line-height: 62px;
+                    &:before{
+                        font-size: 23px;
+                    }
+                }
+            }
+            .pageSiparisSonuc_btnSiparisSonuc {
+                padding: 0;
+                .pageSiparisSonuc_btnSiparisSonucSepeteDon,
+                .pageSiparisSonuc_btnOdemeBilgiDon{
+                    table{
+                        margin: 20px auto 0 auto;
+                        a.btnOdemeBilgiDon, a.btnSiparisSonucSepeteDon{
+                            max-width: 100%;
+                        }
+                    }
+                }
+            }
+            .ems-sip-success {
+                a{
+                    max-width: 100%;
+                    border: 1px solid #000000;
+                    max-width: 330px;
+                }
+            }
+        }
+        &-row {
+            .ems-page-cart-colmn-1, &.ems-page-cart-row-3 {
+                z-index: 8;
+                background: #fff;
+                position: relative;
+            }
+            .swiper-title-2.margin-30 {
+                margin-top: 20px !important;  
+            }
+        }
+    }
+    .sip-sonuc-3d .ems-page-cart .bottom-step a.btnDefault[id$=btnSiparisSonuc] {width: 50%; left: 0;}
+    .ems-cart-ntf {
+        .ems-grid-ntf {
+            .ems-grid-row {
+                > div {
+                    display: inline-block;
+                }
+                .ems-grid-img {
+                    width: 30%;
+                    img {
+                        width: 100%;
+                    }
+                }
+                .ems-grid-price {
+                    float: left;
+                    clear: both;
+                }
+                .ems-grid-name {
+                    width: 70%;
+                    padding:0 0 0 10px;
+                }
+                .ems-grid-cart-addBtn {
+                    width: 100%;
+                    margin-top: 20px;
+                    a.btnDefault {
+                        width: 60%; 
+                        max-width: 160px;
+                        position: absolute;
+                        right: 0;
+                    }
+                    .total-gain {
+                        float: left;
+                        clear: both;
+                        padding: 0; 
+                    }
+                    .ems-grid-price {
+                        padding: 0;
+                    }
+                }
+            }
+        }
+    }
+}
